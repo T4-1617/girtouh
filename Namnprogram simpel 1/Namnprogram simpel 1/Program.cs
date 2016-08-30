@@ -14,7 +14,7 @@ namespace Namnprogram_simpel_1
             string name = Console.ReadLine();
             Console.WriteLine("Ok, och vad heter du i efternamn?");
             string lastname = Console.ReadLine();
-            Console.WriteLine("Ok. Hej " + name + " " + lastname + "! Trevligt att träffas!");
+            Console.WriteLine("Ok. Hej " + lastname + "! Trevligt att träffas!");
             Console.ReadLine();
         }
     }
