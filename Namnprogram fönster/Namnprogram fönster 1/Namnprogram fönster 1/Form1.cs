@@ -23,5 +23,10 @@ namespace Namnprogram_fönster_1
 
             MessageBox.Show("Hello " + textBox1.Text +" " +" " + textBox2.Text + "!");
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
