@@ -8,6 +8,7 @@ namespace Consol_uppgift_01_09_16
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             Console.WriteLine("Enter firstname");
@@ -26,42 +27,46 @@ namespace Consol_uppgift_01_09_16
                 if (s == "Counter")
                 {
                     {
-
-                        
-
-
                         //Arbete
                         string f = fname + lname;
-
-
                         if (f.Length > -1)
                         {
-                            Console.WriteLine("Firsname and lastname: " + fname + " " + lname + ", contains "+f.Length+" letters, without space.");
-                            Console.WriteLine("Firstname: " + fname+", contains " + fname.Length + " letters.");
-                            Console.WriteLine("Lastname: " + lname + ", contains " + lname.Length + " letters.");
+
+                            Console.WriteLine
+                                (string.Format
+                                ("Firstname and lastname: {0} {1} contains {2} letters, without space.",
+                                fname, lname, f.Length));
+                            Console.WriteLine
+                                (string.Format
+                                ("Firstname: {0} contains {1} letters.", fname, fname.Length));
+                            Console.WriteLine
+                                (string.Format
+                                ("Lastname: {0}, contains {1} letters.", lname, lname.Length));
                         }
 
 
-                       for (int i = 0; i < f.Length; i++)
+                        for (int i = 0; i < fname.Length; i++)
 
                         {
-                            Console.WriteLine((i+1)+"---->" + f[i]);
-
-
+                            Console.WriteLine((i + 1) + "---->" + fname[i]);
 
                         }
+                        for (int i = 0; i < lname.Length; i++)
+                        {
+                            Console.WriteLine((i + 1) + "------->" + lname[i]);
+                        }
+                        Console.WriteLine("Press enter to proceed");
+                        Console.ReadLine();
 
-
-
-
+                        Console.WriteLine(Reverseletters(lname));
+                        Console.WriteLine(Reverseletters(fname));
+                        Console.ReadLine();
 
                         break;
                         //Arbete
 
                     }
                 }
-
-
                 if (s == "Exit")
                 {
                     Console.WriteLine(" ");
@@ -70,6 +75,15 @@ namespace Consol_uppgift_01_09_16
                 }
 
             }
+
+
+        }
+        static string Reverseletters(string reverseName)
+        {
+            char[] name = reverseName.ToCharArray();
+            Array.Reverse(name);
+
+            return new string(name);
 
 
         }
