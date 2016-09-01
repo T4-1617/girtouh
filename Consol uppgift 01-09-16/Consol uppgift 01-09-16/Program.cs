@@ -24,40 +24,54 @@ namespace Consol_uppgift_01_09_16
                 Console.WriteLine("Write Counter or Exit to proceed");
                 string s = Console.ReadLine();
                 if (s == "Counter")
-                
-
-                    //Arbete
-                    if (fname.Length != 0)
+                {
                     {
-                        Console.WriteLine(fname);
-                    }
 
-                    string numbers = fname + lname;
-                    foreach (char item in numbers)
-                    {
-                        Console.WriteLine(item + " <-----This is a letter");
-                        Console.WriteLine(item);
+                        
 
+
+                        //Arbete
+                        string f = fname + lname;
+
+
+                        if (f.Length > -1)
+                        {
+                            Console.WriteLine("Firsname and lastname: " + fname + " " + lname + ", contains "+f.Length+" letters, without space.");
+                            Console.WriteLine("Firstname: " + fname+", contains " + fname.Length + " letters.");
+                            Console.WriteLine("Lastname: " + lname + ", contains " + lname.Length + " letters.");
+                        }
+
+
+                       for (int i = 0; i < f.Length; i++)
+
+                        {
+                            Console.WriteLine((i+1)+"---->" + f[i]);
+
+
+
+                        }
 
 
 
 
 
                         break;
-                    //Arbete
-                }
+                        //Arbete
 
+                    }
+                }
 
 
                 if (s == "Exit")
                 {
+                    Console.WriteLine(" ");
                     Console.WriteLine("Bye!");
                     break;
                 }
 
             }
-            
-            
+
+
         }
     }
 }
