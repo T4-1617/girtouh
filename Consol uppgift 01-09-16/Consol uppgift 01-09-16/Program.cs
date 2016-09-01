@@ -11,6 +11,7 @@ namespace Consol_uppgift_01_09_16
 
         static void Main(string[] args)
         {
+            //Where the names for the programe is stated.
             Console.WriteLine("Enter firstname");
             string fname = Console.ReadLine();
             Console.WriteLine("Enter lastname");
@@ -19,7 +20,7 @@ namespace Consol_uppgift_01_09_16
 
             string counterorexit = Console.ReadLine();
 
-
+            //Created loop to avoid program crashing when no/wrong value is written.
             while (true)
             {
                 Console.WriteLine("Write Counter or Exit to proceed");
@@ -27,11 +28,11 @@ namespace Consol_uppgift_01_09_16
                 if (s == "Counter")
                 {
                     {
-                        //Arbete
+                        
                         string f = fname + lname;
                         if (f.Length > -1)
                         {
-
+                            //Stated summary of counting command.
                             Console.WriteLine
                                 (string.Format
                                 ("Firstname and lastname: {0} {1} contains {2} letters, without space.",
@@ -44,7 +45,7 @@ namespace Consol_uppgift_01_09_16
                                 ("Lastname: {0}, contains {1} letters.", lname, lname.Length));
                         }
 
-
+                        //Easy-to-see counting for every letter.
                         for (int i = 0; i < fname.Length; i++)
 
                         {
@@ -57,16 +58,17 @@ namespace Consol_uppgift_01_09_16
                         }
                         Console.WriteLine("Press enter to proceed");
                         Console.ReadLine();
-
+                        //Added method for reversing letters. See "static string Reverseletters(string reverseName)".
                         Console.WriteLine(Reverseletters(lname));
                         Console.WriteLine(Reverseletters(fname));
                         Console.ReadLine();
 
                         break;
-                        //Arbete
+                        
 
                     }
                 }
+                //Exit process.
                 if (s == "Exit")
                 {
                     Console.WriteLine(" ");
@@ -80,6 +82,7 @@ namespace Consol_uppgift_01_09_16
         }
         static string Reverseletters(string reverseName)
         {
+            //Method for reversing letters.
             char[] name = reverseName.ToCharArray();
             Array.Reverse(name);
 
