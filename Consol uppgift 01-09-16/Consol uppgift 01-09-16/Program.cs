@@ -11,12 +11,12 @@ namespace Consol_uppgift_01_09_16
 
         static void Main(string[] args)
         {
-            //Where the names for the programe is stated.
+            //Where the names for the program is stated.
             Console.WriteLine("Enter firstname");
             string fname = Console.ReadLine();
             Console.WriteLine("Enter lastname");
             string lname = Console.ReadLine();
-            Console.WriteLine("Hello " + fname + " " + lname + ".");
+            Console.WriteLine(string.Format("Hello {0} {1}. ", fname, lname));
 
             string counterorexit = Console.ReadLine();
 
@@ -28,7 +28,7 @@ namespace Consol_uppgift_01_09_16
                 if (s == "Counter")
                 {
                     {
-                        
+
                         string f = fname + lname;
                         if (f.Length > -1)
                         {
@@ -58,13 +58,28 @@ namespace Consol_uppgift_01_09_16
                         }
                         Console.WriteLine("Press enter to proceed");
                         Console.ReadLine();
-                        //Added method for reversing letters. See "static string Reverseletters(string reverseName)".
+                        //Added method for reversing letters. See "static string Reverseletters".
                         Console.WriteLine(Reverseletters(lname));
                         Console.WriteLine(Reverseletters(fname));
                         Console.ReadLine();
 
+                        for (int i = 0; i < f.Length; i++)
+                        {
+                            if (i % 2 == 1)
+                            {
+                                Console.Write(f[i].ToString().ToLower());
+                            }
+                            else
+                            {
+                                Console.Write(f[i].ToString().ToUpper());
+                            }
+                            Console.WriteLine("");
+                        }
+
+
                         break;
-                        
+
+
 
                     }
                 }
