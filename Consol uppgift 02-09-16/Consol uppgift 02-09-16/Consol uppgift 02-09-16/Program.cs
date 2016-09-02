@@ -61,30 +61,39 @@ namespace Consol_uppgift_02_09_16
                     Console.WriteLine(" ");
                     Gamemap[x, y] = true;
                     Boats++;
-                    
+
                 }
             }
             while (boats_on_map > 0)
             {
                 Console.WriteLine("Enter x value");
-                int shotX = int.Parse(Console.ReadLine());
+                int shotX = ReadNumber();
+
 
                 Console.WriteLine("Enter y value");
-                int shotY = int.Parse(Console.ReadLine());
+                int shotY = ReadNumber();
 
 
                 if (Gamemap[shotX, shotY] == true)
                 {
-                    Console.WriteLine("Hit boat at {0}, {1}.",shotX,shotY);
-                    Console.ReadLine();
+                    Console.WriteLine("Hit boat at {0}, {1}.", shotX, shotY);
+                    Console.WriteLine(" ");
+                    Console.WriteLine("<<Press enter to continue>>"); Console.ReadLine();
+                    boats_on_map--;
                 }
-                if (Gamemap[shotX, shotY]== false)
+                if (Gamemap[shotX, shotY] == false)
                 {
                     Console.WriteLine("Miss at {0}, {1}.", shotX, shotY);
+                    Console.WriteLine(" ");
+                    Console.WriteLine("<<Press enter to continue>>");
                     Console.ReadLine();
-                }
-            }
 
+
+                }
+
+
+            }
+            Console.WriteLine("You win!");
 
             /*
                     Console.WriteLine("Search with numbers on (x,y)");
@@ -106,6 +115,26 @@ namespace Consol_uppgift_02_09_16
         }*/
 
 
+        }
+
+        private static int ReadNumber()
+        {
+            // Read a number from the console
+            int num = 0;
+            bool isNum = false;
+
+            // Continue loop for as long as the line cannot be converted
+            while (isNum != true)
+            {
+                // Read a line from the console
+                string line = Console.ReadLine();
+
+                // Check if line can be converted to a number
+                isNum = int.TryParse(line, out num);
+
+            }
+
+            return num;
         }
     }
 }
