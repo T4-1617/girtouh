@@ -38,11 +38,26 @@ namespace Consol_uppgift_02_09_16
                         f = "0";
                         Console.Write(f);
                     }
-                    
+
                 }
                 Console.WriteLine();
+            }
+                Random boat = new Random();
+                int Boats = 0;
+                while (Boats < 3)
+                {
+                    int x = boat.Next(0, 7);
+                    int y = boat.Next(0, 5);
+                if (Gamemap[x,y] ==false)
+                {
+                    Console.WriteLine("Boat added at {0}, {1}", x, y);
+                    Gamemap[x, y] = true;
+                        Boats++;
+                }
+                }
 
-               
+
+
                 /*Potential updates: 
                                     I
                                     I
@@ -54,7 +69,9 @@ namespace Consol_uppgift_02_09_16
             {
                 
             }*/
-            }
+
+            
         }
     }
 }
+
