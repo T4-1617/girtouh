@@ -64,36 +64,45 @@ namespace Consol_uppgift_02_09_16
 
                 }
             }
-            while (boats_on_map > 0)
+
+            int shots = 10;
+            while (shots > 0)
+            { 
+
             {
-                Console.WriteLine("Enter x value");
-                int shotX = ReadNumber();
-
-
-                Console.WriteLine("Enter y value");
-                int shotY = ReadNumber();
-
-
-                if (Gamemap[shotX, shotY] == true)
+                while (boats_on_map > 0)
                 {
-                    Console.WriteLine("Hit boat at {0}, {1}.", shotX, shotY);
-                    Console.WriteLine(" ");
-                    Console.WriteLine("<<Press enter to continue>>"); Console.ReadLine();
-                    boats_on_map--;
-                }
-                if (Gamemap[shotX, shotY] == false)
-                {
-                    Console.WriteLine("Miss at {0}, {1}.", shotX, shotY);
-                    Console.WriteLine(" ");
-                    Console.WriteLine("<<Press enter to continue>>");
-                    Console.ReadLine();
+                    Console.WriteLine("Enter x value");
+                    int shotX = ReadNumber();
+
+
+                    Console.WriteLine("Enter y value");
+                    int shotY = ReadNumber();
+
+
+                    if (Gamemap[shotX, shotY] == true)
+                    {
+                        Console.WriteLine("Hit boat at {0}, {1}.", shotX, shotY);
+                        Console.WriteLine(" ");
+                        Console.WriteLine("<<Press enter to continue>>"); Console.ReadLine();
+                        boats_on_map--;
+                    }
+                    if (Gamemap[shotX, shotY] == false)
+                    {
+                        Console.WriteLine("Miss at {0}, {1}.", shotX, shotY);
+                        Console.WriteLine(" ");
+                        Console.WriteLine("<<Press enter to continue>>");
+                        Console.ReadLine();
+
+
+                    }
 
 
                 }
-
-
             }
             Console.WriteLine("You win!");
+
+        }
 
             /*
                     Console.WriteLine("Search with numbers on (x,y)");
