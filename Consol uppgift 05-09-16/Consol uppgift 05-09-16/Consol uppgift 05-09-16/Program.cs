@@ -28,11 +28,11 @@ namespace Consol_uppgift_05_09_16
             Console.ReadLine();
             Random draw = new Random();
             int Card = 52;
+            
 
             while (Card > 0)
             {
-                string p = "Du har {0} kort kvar!";
-
+                
                 int colour = draw.Next(0, 4);
                 int number = draw.Next(0, 13);
 
@@ -42,19 +42,19 @@ namespace Consol_uppgift_05_09_16
                     switch (colour)
                     {
                         case 0:
-                            Console.Write("Du drog hjärter", number + p);
+                            Console.Write("Du drog hjärter");
                             break;
 
                         case 1:
-                            Console.Write("Du drog klöver", number + p);
+                            Console.Write("Du drog klöver");
                             break;
 
                         case 2:
-                            Console.Write("Du drog ruter", number + p);
+                            Console.Write("Du drog ruter");
                             break;
 
                         case 3:
-                            Console.Write("Du drog spader", number + p);
+                            Console.Write("Du drog spader");
                             break;
                     }
                     //Tells which number was drawn
@@ -62,73 +62,77 @@ namespace Consol_uppgift_05_09_16
                     switch (number)
                     {
                         case 0:
-                            Console.WriteLine(" ess.");
-                            Console.ReadLine();
+                            Console.Write(" ess.");
+                            
                             break;
 
                         case 1:
-                            Console.WriteLine(" två.");
-                            Console.ReadLine();
+                            Console.Write(" två.");
+                            
                             break;
 
                         case 2:
-                            Console.WriteLine(" tre.");
-                            Console.ReadLine();
+                            Console.Write(" tre.");
+                            
                             break;
 
                         case 3:
-                            Console.WriteLine(" fyra.");
-                            Console.ReadLine();
+                            Console.Write(" fyra.");
+                            
                             break;
 
                         case 4:
-                            Console.WriteLine(" fem.");
-                            Console.ReadLine();
+                            Console.Write(" fem.");
+                            
                             break;
 
                         case 5:
-                            Console.WriteLine(" sex.");
-                            Console.ReadLine();
+                            Console.Write(" sex.");
+                            
                             break;
 
                         case 6:
-                            Console.WriteLine(" sju.");
-                            Console.ReadLine();
+                            Console.Write(" sju.");
+                            
                             break;
 
                         case 7:
-                            Console.WriteLine(" åtta.");
-                            Console.ReadLine();
+                            Console.Write(" åtta.");
+                            
                             break;
 
                         case 8:
-                            Console.WriteLine(" nio.");
-                            Console.ReadLine();
+                            Console.Write(" nio.");
+                            
                             break;
 
                         case 9:
-                            Console.WriteLine(" tio.");
-                            Console.ReadLine();
+                            Console.Write(" tio.");
+                            
                             break;
 
                         case 10:
-                            Console.WriteLine(" knekt.");
-                            Console.ReadLine();
+                            Console.Write(" knekt.");
+                            
                             break;
 
                         case 11:
-                            Console.WriteLine(" dam.");
-                            Console.ReadLine();
+                            Console.Write(" dam.");
+                            
                             break;
 
                         case 12:
-                            Console.WriteLine(" kung.");
-                            Console.ReadLine();
+                            Console.Write(" kung.");
+                            
                             break;
                     }
-
+                    
                     carddeck[colour, number] = false;
                     Card--;
+
+                    Console.Write(String.Format(" Du har {0} kort kvar.", Card));
+                    Console.ReadLine();
+
                 }
 
             }
