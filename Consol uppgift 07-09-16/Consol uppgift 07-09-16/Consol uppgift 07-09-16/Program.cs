@@ -24,9 +24,9 @@ namespace Consol_uppgift_07_09_16
             //Chosing yes or no to continue
 
 
-                Random draw = new Random();
-                int Cards = 104;
-                int score = 0;
+            Random draw = new Random();
+            int Cards = 104;
+            int score = 0;
             //Added drawing restrictions
             while (Cards > 0)
             {
@@ -34,100 +34,108 @@ namespace Consol_uppgift_07_09_16
                 string yesorno = Console.ReadLine();
                 if (yesorno == "y")
                 {
-
+                    string num = string.Empty;
                     int colour = draw.Next(0, 8);
                     int number = draw.Next(0, 13);
                     if (carddeck[colour, number])
                     {
-                        switch (colour)
-                        //Chosing colour
-                        {
-                            case 0:
-                                Console.WriteLine("You draw {0} of Hearts.", number + 1);
-                                break;
 
 
-                            case 1:
-                                Console.WriteLine("You drew {0} of Diamonds.", number + 1);
-                                break;
 
-                            case 2:
-                                Console.WriteLine("You drew {0} of Spades.", number + 1);
-                                break;
-
-                            case 3:
-                                Console.WriteLine("You drew {0} of Clovers.", number + 1);
-                                break;
-                            case 4:
-                                Console.WriteLine("You drew {0} of Hearts.", number + 1);
-                                break;
-
-
-                            case 5:
-                                Console.WriteLine("You drew {0} of Diamonds.", number + 1);
-                                break;
-
-                            case 6:
-                                Console.WriteLine("You drew {0} of Spades.", number + 1);
-                                break;
-
-                            case 7:
-                                Console.WriteLine("You drew {0} of Clovers.", number + 1);
-                                break;
-
-                        }
                         switch (number)
                         //Chosing number
                         {
                             case 0:
-                                Console.WriteLine();
+                                num = "1";
                                 break;
 
                             case 1:
-                                Console.WriteLine();
+                                num = "2";
                                 break;
 
                             case 2:
-                                Console.WriteLine();
+                                num = "3";
                                 break;
 
                             case 3:
-                                Console.WriteLine();
+                                num = "4";
                                 break;
 
                             case 4:
-                                Console.WriteLine();
+                                num = "5";
                                 break;
 
                             case 5:
-                                Console.WriteLine();
+                                num = "6"; ;
                                 break;
 
                             case 6:
-                                Console.WriteLine();
+                                num = "7";
                                 break;
+
                             case 7:
-                                Console.WriteLine();
+                                num = "8";
                                 break;
 
                             case 8:
-                                Console.WriteLine();
+                                num = "9";
                                 break;
 
                             case 9:
-                                Console.WriteLine();
+                                num = "10";
                                 break;
 
                             case 10:
-                                Console.WriteLine();
+                                num = "Jack";
                                 break;
+
                             case 11:
-                                Console.WriteLine();
+                                num = "Queen";
                                 break;
 
                             case 12:
-                                Console.WriteLine();
+                                num = "King";
                                 break;
+
+                            default:
+                                num = string.Empty;
+                                //num = (number + 1).ToString();
+                                break;
+                        }
+                        switch (colour)
+                        //Chosing colour
+                        {
+                            case 0:
+                                Console.Write(String.Format("You draw {0} of Hearts.", num));
+                                break;
+
+                            case 1:
+                                Console.Write(String.Format("You drew {0} of Diamonds.", num));
+                                break;
+
+                            case 2:
+                                Console.Write(String.Format("You drew {0} of Spades.", num));
+                                break;
+
+                            case 3:
+                                Console.Write(String.Format("You drew {0} of Clovers.", num));
+                                break;
+                            case 4:
+                                Console.Write(String.Format("You drew {0} of Hearts.", num));
+                                break;
+
+                            case 5:
+                                Console.Write(String.Format("You drew {0} of Diamonds.", num));
+                                break;
+
+                            case 6:
+                                Console.Write(String.Format("You drew {0} of Spades.", num));
+                                break;
+
+                            case 7:
+                                Console.Write(String.Format("You drew {0} of Clovers.", num));
+                                break;
+
 
                         }
                         carddeck[colour, number] = false;
@@ -142,7 +150,7 @@ namespace Consol_uppgift_07_09_16
                             score = 0;
 
                         }
-                        if (score ==21)
+                        if (score == 21)
                         {
                             Console.WriteLine("You win!");
                             return;
@@ -155,7 +163,7 @@ namespace Consol_uppgift_07_09_16
                     score = 0;
                 }
             }
-                Console.WriteLine("No more cards in shoe.");
+            Console.WriteLine("No more cards in shoe.");
             Console.ReadLine();
 
         }
