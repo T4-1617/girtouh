@@ -20,112 +20,143 @@ namespace Consol_uppgift_07_09_16
                     carddeck[colour, number] = true;
                 }
             }
-            Console.WriteLine("Would you like a card?(Y/N)");
-            string yesorno = Console.ReadLine();
-            if (yesorno == "y")
-            {
+
+            //Chosing yes or no to continue
+
+
                 Random draw = new Random();
                 int Cards = 104;
-                int points = 0;
-                //Added drawing restrictions
-                while (Cards > 0 && points != 21)
+                int score = 0;
+            //Added drawing restrictions
+            while (Cards > 0)
+            {
+                Console.WriteLine("Would you like a card?(Y/N)");
+                string yesorno = Console.ReadLine();
+                if (yesorno == "y")
                 {
+
                     int colour = draw.Next(0, 8);
                     int number = draw.Next(0, 13);
-                    switch (colour)
+                    if (carddeck[colour, number])
+                    {
+                        switch (colour)
                         //Chosing colour
-                    {
-                        case 0:
-                            Console.Write("Du drog Hjärter");
-                            break;
+                        {
+                            case 0:
+                                Console.WriteLine("You draw {0} of Hearts.", number + 1);
+                                break;
 
-                        case 1:
-                            Console.Write("D");
-                            break;
 
-                        case 2:
-                            Console.Write("S");
-                            break;
+                            case 1:
+                                Console.WriteLine("You drew {0} of Diamonds.", number + 1);
+                                break;
 
-                        case 3:
-                            Console.Write("C");
-                            break;
+                            case 2:
+                                Console.WriteLine("You drew {0} of Spades.", number + 1);
+                                break;
 
-                        case 4:
-                            Console.Write("H");
-                            break;
+                            case 3:
+                                Console.WriteLine("You drew {0} of Clovers.", number + 1);
+                                break;
+                            case 4:
+                                Console.WriteLine("You drew {0} of Hearts.", number + 1);
+                                break;
 
-                        case 5:
-                            Console.Write("D");
-                            break;
 
-                        case 6:
-                            Console.Write("S");
-                            break;
+                            case 5:
+                                Console.WriteLine("You drew {0} of Diamonds.", number + 1);
+                                break;
 
-                        case 7:
-                            Console.Write("C");
-                            break;
+                            case 6:
+                                Console.WriteLine("You drew {0} of Spades.", number + 1);
+                                break;
 
-                    }
-                    switch (number)
+                            case 7:
+                                Console.WriteLine("You drew {0} of Clovers.", number + 1);
+                                break;
+
+                        }
+                        switch (number)
                         //Chosing number
-                    {
-                        case 0:
-                            Console.Write("1");
-                            break;
+                        {
+                            case 0:
+                                Console.WriteLine();
+                                break;
 
-                        case 1:
-                            Console.Write("2");
-                            break;
+                            case 1:
+                                Console.WriteLine();
+                                break;
 
-                        case 2:
-                            Console.Write("3");
-                            break;
+                            case 2:
+                                Console.WriteLine();
+                                break;
 
-                        case 3:
-                            Console.Write("4");
-                            break;
+                            case 3:
+                                Console.WriteLine();
+                                break;
 
-                        case 4:
-                            Console.Write("5");
-                            break;
+                            case 4:
+                                Console.WriteLine();
+                                break;
 
-                        case 5:
-                            Console.Write("6");
-                            break;
+                            case 5:
+                                Console.WriteLine();
+                                break;
 
-                        case 6:
-                            Console.Write("7");
-                            break;
-                        case 7:
-                            Console.Write("8");
-                            break;
+                            case 6:
+                                Console.WriteLine();
+                                break;
+                            case 7:
+                                Console.WriteLine();
+                                break;
 
-                        case 8:
-                            Console.Write("9");
-                            break;
+                            case 8:
+                                Console.WriteLine();
+                                break;
 
-                        case 9:
-                            Console.Write("10");
-                            break;
+                            case 9:
+                                Console.WriteLine();
+                                break;
 
-                        case 10:
-                            Console.Write("J");
-                            break;
-                        case 11:
-                            Console.Write("D");
-                            break;
+                            case 10:
+                                Console.WriteLine();
+                                break;
+                            case 11:
+                                Console.WriteLine();
+                                break;
 
-                        case 12:
-                            Console.Write("K");
-                            break;
+                            case 12:
+                                Console.WriteLine();
+                                break;
 
+                        }
+                        carddeck[colour, number] = false;
+                        Cards--;
+                        //Added score counter
+                        score = (number + 1) + score;
+
+                        Console.WriteLine("Your score is {0} points!", score);
+                        if (score > 21)
+                        {
+                            Console.WriteLine("You are full, better luck next time!");
+                            score = 0;
+
+                        }
+                        if (score ==21)
+                        {
+                            Console.WriteLine("You win!");
+                            return;
+                        }
                     }
-
-                    
+                }
+                if (yesorno == "n")
+                {
+                    Console.WriteLine("Score reset.");
+                    score = 0;
                 }
             }
+                Console.WriteLine("No more cards in shoe.");
+            Console.ReadLine();
 
         }
     }
