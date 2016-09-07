@@ -32,12 +32,21 @@ namespace Consol_uppgift_07_09_16
             {
                 Console.WriteLine("Would you like a card?(Y/N)");
                 string yesorno = Console.ReadLine();
+                //Card counter
+                Console.WriteLine(Cards);
                 if (yesorno == "y")
                 {
-                    string num = string.Empty;
+
+                    string num;
                     int colour = draw.Next(0, 8);
                     int number = draw.Next(0, 13);
-                    if (carddeck[colour, number])
+                    //Searches for undrawn cards
+                    while(carddeck[colour, number] ==false)
+                    {
+                       colour = draw.Next(0,8);
+                        number = draw.Next(0, 13);
+                    }
+                    if (carddeck[colour, number]==true)
                     {
 
 
@@ -46,62 +55,64 @@ namespace Consol_uppgift_07_09_16
                         //Chosing number
                         {
                             case 0:
-                                num = "1";
+                                num = "ace";
                                 break;
 
-                            case 1:
-                                num = "2";
-                                break;
+                               case 1:
+                                   num = "2";
+                                   break;
 
-                            case 2:
-                                num = "3";
-                                break;
+                               case 2:
+                                   num = "3";
+                                   break;
 
-                            case 3:
-                                num = "4";
-                                break;
+                               case 3:
+                                   num = "4";
+                                   break;
 
-                            case 4:
-                                num = "5";
-                                break;
+                               case 4:
+                                   num = "5";
+                                   break;
 
-                            case 5:
-                                num = "6"; ;
-                                break;
+                               case 5:
+                                   num = "6"; ;
+                                   break;
 
-                            case 6:
-                                num = "7";
-                                break;
+                               case 6:
+                                   num = "7";
+                                   break;
 
-                            case 7:
-                                num = "8";
-                                break;
+                               case 7:
+                                   num = "8";
+                                   break;
 
-                            case 8:
-                                num = "9";
-                                break;
+                               case 8:
+                                   num = "9";
+                                   break;
 
-                            case 9:
-                                num = "10";
-                                break;
+                               case 9:
+                                   num = "10";
+                                   break;
 
-                            case 10:
-                                num = "Jack";
-                                break;
+                               case 10:
+                                   num = "Jack";
+                                   break;
 
-                            case 11:
-                                num = "Queen";
-                                break;
+                               case 11:
+                                   num = "Queen";
+                                   break;
 
-                            case 12:
-                                num = "King";
-                                break;
+                               case 12:
+                                   num = "King";
+                                   break;
+                               
 
                             default:
                                 num = string.Empty;
                                 //num = (number + 1).ToString();
                                 break;
                         }
+
                         switch (colour)
                         //Chosing colour
                         {
@@ -140,7 +151,16 @@ namespace Consol_uppgift_07_09_16
                         }
                         carddeck[colour, number] = false;
                         Cards--;
-                        //Added score counter
+                        //All face cards set to 10
+                        if (number > 9)
+                        {
+                            number = 9;
+                        }
+                        //Score counter
+                        if (number == 0 && score < 11)
+                        {
+                            number = 10;
+                        }
                         score = (number + 1) + score;
 
                         Console.WriteLine("Your score is {0} points!", score);
@@ -156,6 +176,7 @@ namespace Consol_uppgift_07_09_16
                             return;
                         }
                     }
+
                 }
                 if (yesorno == "n")
                 {
