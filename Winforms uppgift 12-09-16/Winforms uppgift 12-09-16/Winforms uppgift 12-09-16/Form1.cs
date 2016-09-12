@@ -24,13 +24,23 @@ namespace Winforms_uppgift_12_09_16
 
         public static int Randomize()
         {
+            bool AddingID= true;
             //Randomizes an ID number
             Random search = new Random();
             int number = search.Next(100, 200);
 
-
-            
             return number;
+         /*   if (AddingID == true)
+            {
+                AddingID = false;
+                return number;
+
+            }
+            if (AddingID==false)
+            {
+                number = search.Next(100, 200);
+            }
+            */
 
         }
 
@@ -47,13 +57,13 @@ namespace Winforms_uppgift_12_09_16
         {
             int number = Randomize();
             string Identification;
-            
+
 
 
             Identification = number.ToString();
-            
+
             //Adding customer information
-            
+
             Customer customs = new Customer();
 
             customs.FirstName = txtFirstName.Text;
