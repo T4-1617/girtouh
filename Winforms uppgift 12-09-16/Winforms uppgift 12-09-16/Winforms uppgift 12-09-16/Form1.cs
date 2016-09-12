@@ -22,7 +22,19 @@ namespace Winforms_uppgift_12_09_16
         System.Collections.ArrayList CustomerS = new System.Collections.ArrayList();
         int amount;
 
-    
+        public static int Randomize()
+        {
+            //Randomizes an ID number
+            Random search = new Random();
+            int number = search.Next(100, 200);
+
+
+            
+            return number;
+
+        }
+
+
 
 
         public Form1()
@@ -33,19 +45,20 @@ namespace Winforms_uppgift_12_09_16
         //Button adds customers to list box
         private void AddCustomer_Click(object sender, EventArgs e)
         {
-        /*    int number = Randomize();
+            int number = Randomize();
             string Identification;
-
+            
 
 
             Identification = number.ToString();
-            */
+            
             //Adding customer information
+            
             Customer customs = new Customer();
 
             customs.FirstName = txtFirstName.Text;
             customs.LastName = txtLastName.Text;
-            //customs.IDNumber = Identification;
+            customs.IDNumber = Identification;
             CustomerS.Add(customs);
 
             //Rebuilding listbox for each new customer
