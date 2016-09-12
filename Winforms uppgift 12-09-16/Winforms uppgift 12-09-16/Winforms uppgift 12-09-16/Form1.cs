@@ -10,16 +10,21 @@ using System.Windows.Forms;
 
 namespace Winforms_uppgift_12_09_16
 {
-    
+
     public partial class Form1 : Form
     {
+
+
+
         //Adding ID number bool
-        bool[,] IDnumber = new bool[0, 100];
 
         //Saving added customers
         System.Collections.ArrayList CustomerS = new System.Collections.ArrayList();
         int amount;
-        
+
+    
+
+
         public Form1()
         {
             InitializeComponent();
@@ -28,10 +33,19 @@ namespace Winforms_uppgift_12_09_16
         //Button adds customers to list box
         private void AddCustomer_Click(object sender, EventArgs e)
         {
+        /*    int number = Randomize();
+            string Identification;
+
+
+
+            Identification = number.ToString();
+            */
+            //Adding customer information
             Customer customs = new Customer();
 
             customs.FirstName = txtFirstName.Text;
             customs.LastName = txtLastName.Text;
+            //customs.IDNumber = Identification;
             CustomerS.Add(customs);
 
             //Rebuilding listbox for each new customer
@@ -43,6 +57,9 @@ namespace Winforms_uppgift_12_09_16
 
             //Amount of customers
             label4.Text = string.Format("Du har {0} kunder.", amount);
+
         }
+
+
     }
 }
