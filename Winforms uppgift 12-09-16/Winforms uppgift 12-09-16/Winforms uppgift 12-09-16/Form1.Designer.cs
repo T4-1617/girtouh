@@ -91,6 +91,7 @@
             this.listBox1.Size = new System.Drawing.Size(274, 173);
             this.listBox1.TabIndex = 7;
             this.listBox1.Tag = "";
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label4
             // 

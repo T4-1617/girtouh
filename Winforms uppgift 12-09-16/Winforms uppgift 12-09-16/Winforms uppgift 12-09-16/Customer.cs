@@ -22,7 +22,11 @@ namespace Winforms_uppgift_12_09_16
         public string FullName()
         {
 
-            return string.Format("{0} {1}, ID Number: {2}. Status: Active", FirstName, LastName, IDNumber);
+            return string.Format("{0} {1}", FirstName, LastName);
+        }
+        public string IdentNumber()
+        {
+            return string.Format("ID: {0}, STATUS: Active", IDNumber);
         }
 
     }
