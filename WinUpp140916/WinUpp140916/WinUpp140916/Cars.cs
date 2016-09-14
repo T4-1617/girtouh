@@ -21,6 +21,13 @@ namespace WinUpp140916
             return string.Format("{0}", CarName);
         }
 
+        public Cars()
+        {
+            CarName = string.Empty;
+            CarNumber = string.Empty;
+            CarColour = string.Empty;
+        }
+
 
     }
 }

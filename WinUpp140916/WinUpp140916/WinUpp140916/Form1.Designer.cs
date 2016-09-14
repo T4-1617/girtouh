@@ -32,8 +32,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.InfoField = new System.Windows.Forms.Panel();
+            this.Reglbl = new System.Windows.Forms.Label();
+            this.Colourlbl = new System.Windows.Forms.Label();
             this.EditBtn = new System.Windows.Forms.Button();
             this.Carnamelbl = new System.Windows.Forms.Label();
+            this.Addbtn = new System.Windows.Forms.Button();
             this.EditField = new System.Windows.Forms.Panel();
             this.Regtxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -74,18 +77,40 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(48, 305);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(192, 20);
+            this.label2.Size = new System.Drawing.Size(190, 40);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Klicka på en bil för detaljer";
+            this.label2.Text = "Clock on a car for details, \r\nor press add to add one.";
             // 
             // InfoField
             // 
+            this.InfoField.Controls.Add(this.Reglbl);
+            this.InfoField.Controls.Add(this.Colourlbl);
             this.InfoField.Controls.Add(this.EditBtn);
             this.InfoField.Controls.Add(this.Carnamelbl);
             this.InfoField.Location = new System.Drawing.Point(354, 66);
             this.InfoField.Name = "InfoField";
             this.InfoField.Size = new System.Drawing.Size(200, 236);
             this.InfoField.TabIndex = 3;
+            // 
+            // Reglbl
+            // 
+            this.Reglbl.AutoSize = true;
+            this.Reglbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reglbl.Location = new System.Drawing.Point(13, 59);
+            this.Reglbl.Name = "Reglbl";
+            this.Reglbl.Size = new System.Drawing.Size(70, 25);
+            this.Reglbl.TabIndex = 3;
+            this.Reglbl.Text = "label7";
+            // 
+            // Colourlbl
+            // 
+            this.Colourlbl.AutoSize = true;
+            this.Colourlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Colourlbl.Location = new System.Drawing.Point(13, 34);
+            this.Colourlbl.Name = "Colourlbl";
+            this.Colourlbl.Size = new System.Drawing.Size(70, 25);
+            this.Colourlbl.TabIndex = 2;
+            this.Colourlbl.Text = "label6";
             // 
             // EditBtn
             // 
@@ -107,6 +132,16 @@
             this.Carnamelbl.TabIndex = 0;
             this.Carnamelbl.Text = "Add a car";
             // 
+            // Addbtn
+            // 
+            this.Addbtn.Location = new System.Drawing.Point(52, 348);
+            this.Addbtn.Name = "Addbtn";
+            this.Addbtn.Size = new System.Drawing.Size(75, 23);
+            this.Addbtn.TabIndex = 4;
+            this.Addbtn.Text = "Add car";
+            this.Addbtn.UseVisualStyleBackColor = true;
+            this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
+            // 
             // EditField
             // 
             this.EditField.Controls.Add(this.Regtxt);
@@ -117,10 +152,10 @@
             this.EditField.Controls.Add(this.Savebtn);
             this.EditField.Controls.Add(this.Cancelbtn);
             this.EditField.Controls.Add(this.Typetxt);
-            this.EditField.Location = new System.Drawing.Point(12, 12);
+            this.EditField.Location = new System.Drawing.Point(7, 12);
             this.EditField.Name = "EditField";
             this.EditField.Size = new System.Drawing.Size(649, 414);
-            this.EditField.TabIndex = 4;
+            this.EditField.TabIndex = 6;
             // 
             // Regtxt
             // 
@@ -202,6 +237,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 438);
             this.Controls.Add(this.EditField);
+            this.Controls.Add(this.Addbtn);
             this.Controls.Add(this.InfoField);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -225,15 +261,18 @@
         private System.Windows.Forms.Panel InfoField;
         private System.Windows.Forms.Label Carnamelbl;
         private System.Windows.Forms.Button EditBtn;
+        private System.Windows.Forms.Label Reglbl;
+        private System.Windows.Forms.Label Colourlbl;
+        private System.Windows.Forms.Button Addbtn;
         private System.Windows.Forms.Panel EditField;
-        private System.Windows.Forms.TextBox Typetxt;
-        private System.Windows.Forms.Button Savebtn;
-        private System.Windows.Forms.Button Cancelbtn;
         private System.Windows.Forms.TextBox Regtxt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox Colourtxt;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button Savebtn;
+        private System.Windows.Forms.Button Cancelbtn;
+        private System.Windows.Forms.TextBox Typetxt;
     }
 }
 

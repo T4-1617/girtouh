@@ -28,7 +28,7 @@ namespace Winforms_uppgift_12_09_16
             Random search = new Random();
             int number = search.Next(100, 200);
             return number;
-
+         
         }
 
 
@@ -46,7 +46,7 @@ namespace Winforms_uppgift_12_09_16
             int number = Randomize();
             string Identification;
 
-
+            
 
             Identification = number.ToString();
 
