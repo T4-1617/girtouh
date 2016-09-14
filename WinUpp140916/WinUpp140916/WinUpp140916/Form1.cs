@@ -33,22 +33,24 @@ namespace WinUpp140916
             Colourlbl.Visible = false;
             Reglbl.Visible = false;
 
-            
+
         }
 
         //Button click adds a car
         private void Addbtn_Click(object sender, EventArgs e)
         {
+
             Cars c1 = new Cars() { CarName = "New car" };
             CarStats.Add(c1);
             Carlist.Items.Add(c1.CarName);
+
         }
 
         //Pressing car opens specified detail field.
         private void Carlist_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            //Showing Detail field
+            //Showing Detail field/InfoField
             InfoField.Visible = true;
             Carnamelbl.Text = CarStats[Carlist.SelectedIndex].CarName;
             Colourlbl.Text = CarStats[Carlist.SelectedIndex].CarColour;
@@ -74,16 +76,19 @@ namespace WinUpp140916
         }
 
         //Save button functions
-        Cars AddingCars = new Cars();
         private void Savebtn_Click(object sender, EventArgs e)
         {
-            //Adding car to system when saved
-           // Cars AddingCars = new Cars();
+            
+            Cars AddingCars = new Cars();
+            //Removing currently selected car
+            CarStats.Remove(CarStats[Carlist.SelectedIndex]);
+
+            //Adding new/changedcar to system when saved
             AddingCars.CarName = Typetxt.Text;
             AddingCars.CarColour = Colourtxt.Text;
             AddingCars.CarNumber = Regtxt.Text;
             CarStats.Add(AddingCars);
-
+            //Adding information to detail field/InfoField
             Carnamelbl.Text = Typetxt.Text;
             Colourlbl.Text = Colourtxt.Text;
             Reglbl.Text = Regtxt.Text;
@@ -106,8 +111,5 @@ namespace WinUpp140916
             }
 
         }
-
-        //Add car button for new cars
-
     }
 }

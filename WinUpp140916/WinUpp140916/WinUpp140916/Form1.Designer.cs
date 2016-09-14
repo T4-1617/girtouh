@@ -38,6 +38,7 @@
             this.Carnamelbl = new System.Windows.Forms.Label();
             this.Addbtn = new System.Windows.Forms.Button();
             this.EditField = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.Regtxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Colourtxt = new System.Windows.Forms.TextBox();
@@ -144,6 +145,7 @@
             // 
             // EditField
             // 
+            this.EditField.Controls.Add(this.label6);
             this.EditField.Controls.Add(this.Regtxt);
             this.EditField.Controls.Add(this.label5);
             this.EditField.Controls.Add(this.Colourtxt);
@@ -156,6 +158,16 @@
             this.EditField.Name = "EditField";
             this.EditField.Size = new System.Drawing.Size(649, 414);
             this.EditField.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(394, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(220, 24);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Changing car information";
             // 
             // Regtxt
             // 
@@ -273,6 +285,7 @@
         private System.Windows.Forms.Button Savebtn;
         private System.Windows.Forms.Button Cancelbtn;
         private System.Windows.Forms.TextBox Typetxt;
+        private System.Windows.Forms.Label label6;
     }
 }
 
