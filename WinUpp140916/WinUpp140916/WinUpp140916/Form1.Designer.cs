@@ -37,6 +37,7 @@
             this.EditBtn = new System.Windows.Forms.Button();
             this.Carnamelbl = new System.Windows.Forms.Label();
             this.Addbtn = new System.Windows.Forms.Button();
+            this.Deletebtn = new System.Windows.Forms.Button();
             this.EditField = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.Regtxt = new System.Windows.Forms.TextBox();
@@ -143,6 +144,16 @@
             this.Addbtn.UseVisualStyleBackColor = true;
             this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
             // 
+            // Deletebtn
+            // 
+            this.Deletebtn.Location = new System.Drawing.Point(151, 348);
+            this.Deletebtn.Name = "Deletebtn";
+            this.Deletebtn.Size = new System.Drawing.Size(75, 23);
+            this.Deletebtn.TabIndex = 5;
+            this.Deletebtn.Text = "Remove car";
+            this.Deletebtn.UseVisualStyleBackColor = true;
+            this.Deletebtn.Click += new System.EventHandler(this.Deletebtn_Click);
+            // 
             // EditField
             // 
             this.EditField.Controls.Add(this.label6);
@@ -157,7 +168,7 @@
             this.EditField.Location = new System.Drawing.Point(7, 12);
             this.EditField.Name = "EditField";
             this.EditField.Size = new System.Drawing.Size(649, 414);
-            this.EditField.TabIndex = 6;
+            this.EditField.TabIndex = 7;
             // 
             // label6
             // 
@@ -249,6 +260,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 438);
             this.Controls.Add(this.EditField);
+            this.Controls.Add(this.Deletebtn);
             this.Controls.Add(this.Addbtn);
             this.Controls.Add(this.InfoField);
             this.Controls.Add(this.label2);
@@ -276,7 +288,9 @@
         private System.Windows.Forms.Label Reglbl;
         private System.Windows.Forms.Label Colourlbl;
         private System.Windows.Forms.Button Addbtn;
+        private System.Windows.Forms.Button Deletebtn;
         private System.Windows.Forms.Panel EditField;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox Regtxt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox Colourtxt;
@@ -285,7 +299,6 @@
         private System.Windows.Forms.Button Savebtn;
         private System.Windows.Forms.Button Cancelbtn;
         private System.Windows.Forms.TextBox Typetxt;
-        private System.Windows.Forms.Label label6;
     }
 }
 

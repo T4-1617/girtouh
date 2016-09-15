@@ -20,14 +20,7 @@ namespace WinUpp140916
             //Avaible cars
             InitializeComponent();
 
-            //CarsInList = Carlist.Items.Count;
-
             //Setting start screen to neutral
-            /*
-            CarStats[Carlist.SelectedIndex].CarName = default();
-            CarStats[Carlist.SelectedIndex].CarColour = default();
-            CarStats[Carlist.SelectedIndex].CarNumber = default();
-*/
             InfoField.Visible = false;
             EditField.Visible = false;
             Colourlbl.Visible = false;
@@ -78,7 +71,7 @@ namespace WinUpp140916
         //Save button functions
         private void Savebtn_Click(object sender, EventArgs e)
         {
-            
+
             Cars AddingCars = new Cars();
             //Removing currently selected car
             CarStats.Remove(CarStats[Carlist.SelectedIndex]);
@@ -111,5 +104,44 @@ namespace WinUpp140916
             }
 
         }
+
+        //Added delete button to remove cars
+        private void Deletebtn_Click(object sender, EventArgs e)
+        {
+
+            //If the list is empty
+            if (Carlist.Items.Count == 0 || Carlist.Items.Count ==-1)
+            {
+                MessageBox.Show("No cars to remove");
+            }
+
+            //If no car is selected
+            if (Carlist.Items.Count>0 && Carlist.SelectedItem ==null)
+            {
+                MessageBox.Show("Please select a car");
+
+                Carlist.Items.Clear();
+                foreach (Cars item in CarStats)
+                {
+                    Carlist.Items.Add(item.Bilnamn());
+                }
+
+            }
+
+            //If a car is selected
+            else
+            {
+                Carlist.Items.Clear();
+                CarStats.Remove(CarStats[Carlist.SelectedIndex]);
+                foreach (Cars item in CarStats)
+                {
+                    Carlist.Items.Add(item.Bilnamn());
+                }
+
+            }
+
+        }
+
+
     }
 }
