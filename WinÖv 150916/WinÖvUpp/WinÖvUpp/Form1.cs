@@ -25,18 +25,22 @@ namespace WinÖvUpp
 
         private void Addbtn_Click(object sender, EventArgs e)
         {
-            if (Employeeradbtn.Checked==true)
+            if (Employeeradbtn.Checked == true)
             {
                 Employee emp = new Employee();
                 emp.FirstName = FirstNametxt.Text;
                 emp.LastName = LastNametxt.Text;
+                ShowCustomersAndEmployees();
+
             }
 
-            if (Customerradbtn.Checked==true)
+            if (Customerradbtn.Checked == true)
             {
                 Customer cus = new Customer();
                 cus.FirstName = FirstNametxt.Text;
                 cus.LastName = LastNametxt.Text;
+                ShowCustomersAndEmployees();
+
             }
             else
             {
@@ -46,15 +50,23 @@ namespace WinÖvUpp
         }
         private void ShowCustomersAndEmployees()
         {
-            if (Employeeradbtn.Checked==true)
+            if (Employeeradbtn.Checked == true)
             {
                 EmployeelistBox.Items.Clear();
                 foreach (Employee item in CustomersAndEmployees)
                 {
-
+                    EmployeelistBox.Items.Add(item.Fullname);
                 }
             }
-            CustomerlistBox.Items.Clear();
+
+            if (Customerradbtn.Checked == true)
+            {
+                CustomerlistBox.Items.Clear();
+                foreach (Customer item in CustomersAndEmployees)
+                {
+                    CustomerlistBox.Items.Add(item.Fullname);
+                }
+            }
         }
 
 
