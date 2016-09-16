@@ -13,6 +13,7 @@ namespace WinUpp_160916
     public partial class Form1 : Form
     {
         System.Collections.ArrayList Cars;
+        System.Collections.ArrayList BookedCars;
         int CarinList = new int();
 
 
@@ -22,6 +23,7 @@ namespace WinUpp_160916
 
             //Adding Cars arraylist
             Cars = new System.Collections.ArrayList();
+            BookedCars = new System.Collections.ArrayList();
 
             Car c = new Car();
             c.CarMaker = "Volvo";
@@ -88,6 +90,9 @@ namespace WinUpp_160916
             Responselbl.Text = string.Empty;
             Addcarpnl.Visible = false;
 
+
+            UppdateReturnlist();
+
         }
 
         //Confirmed booking
@@ -95,6 +100,10 @@ namespace WinUpp_160916
         {
             Responselbl2.Text = "Car booked.";
             Responselbl.Text = "Thank you for your booking!";
+            BookedCars.Add(Cars[Avaiblecarlst.SelectedIndex]);
+            Cars.Remove(Cars[Avaiblecarlst.SelectedIndex]);
+            Updatecarlist();
+
 
         }
 
@@ -103,12 +112,17 @@ namespace WinUpp_160916
         {
             Responselbl.Text = "Car added!";
             //Adding car 
-            Car d = new Car();
-            d.CarMaker = "Suzuki";
-            d.CarModel = "1222994a0087efd";
-            d.CarColour = "Red";
-            d.CarNumber = "003";
-            Cars.Add(d);
+            Car b = new Car();
+            b.CarMaker = CarMakertxt.Text;
+            b.CarModel = CarModeltxt.Text;
+            b.CarColour = CarColourtxt.Text;
+            b.CarNumber = CarNumbertxt.Text;
+            Cars.Add(b);
+
+            CarMakertxt.Text = string.Empty;
+            CarModeltxt.Text = string.Empty;
+            CarColourtxt.Text = string.Empty;
+            CarNumbertxt.Text=string.Empty;
 
 
         }
@@ -116,8 +130,15 @@ namespace WinUpp_160916
         //Confirming return car
         private void Returnconfirmbtn_Click(object sender, EventArgs e)
         {
+            
             Responselbl2.Text = "Car returned.";
             Responselbl.Text = "Thank you for your buisness!";
+            BookedCars.Remove(Cars[Avaiblecarlst.SelectedIndex]);
+            Cars.Add(Cars[Avaiblecarlst.SelectedIndex]);
+            UppdateReturnlist();
+            Updatecarlist();
+
+
         }
 
         //Function to update the list of available cars (Under coding)
@@ -130,9 +151,36 @@ namespace WinUpp_160916
             }
             CarinList = Avaiblecarlst.Items.Count;
 
-            CarAvaiblelbl.Text=string.Format("We have {0} cars available.", CarinList);
+            CarAvaiblelbl.Text = string.Format("We have {0} cars available.", CarinList);
 
 
+        }
+        public void UppdateReturnlist()
+        {
+            Carreturnlst.Items.Clear();
+
+            foreach (Car item in BookedCars)
+            {
+                Carreturnlst.Items.Add(item.CarNameAndNumber());
+            }
+        }
+
+        private void Cancelbtn2_Click(object sender, EventArgs e)
+        {
+            Availablecarpnl.Visible = true;
+            Responselbl2.Text = string.Empty;
+            Responselbl.Text = string.Empty;
+            Addcarpnl.Visible = false;
+            Returncarpnl.Visible = false;
+        }
+
+        private void Canceladdbtn_Click(object sender, EventArgs e)
+        {
+            Availablecarpnl.Visible = true;
+            Responselbl2.Text = string.Empty;
+            Responselbl.Text = string.Empty;
+            Addcarpnl.Visible = false;
+            Returncarpnl.Visible = false;
         }
     }
 }

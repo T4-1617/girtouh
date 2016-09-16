@@ -243,6 +243,7 @@
             this.Canceladdbtn.TabIndex = 9;
             this.Canceladdbtn.Text = "Cancel";
             this.Canceladdbtn.UseVisualStyleBackColor = true;
+            this.Canceladdbtn.Click += new System.EventHandler(this.Canceladdbtn_Click);
             // 
             // Returncarpnl
             // 
@@ -282,6 +283,7 @@
             this.Cancelbtn2.TabIndex = 2;
             this.Cancelbtn2.Text = "Cancel";
             this.Cancelbtn2.UseVisualStyleBackColor = true;
+            this.Cancelbtn2.Click += new System.EventHandler(this.Cancelbtn2_Click);
             // 
             // Responselbl2
             // 
@@ -304,9 +306,9 @@
             this.Controls.Add(this.Addcarbtn);
             this.Controls.Add(this.Showcarbtn);
             this.Controls.Add(this.CarAvaiblelbl);
-            this.Controls.Add(this.Addcarpnl);
             this.Controls.Add(this.Returncarpnl);
             this.Controls.Add(this.Availablecarpnl);
+            this.Controls.Add(this.Addcarpnl);
             this.Name = "Form1";
             this.Text = "ACME CARS";
             this.Availablecarpnl.ResumeLayout(false);
