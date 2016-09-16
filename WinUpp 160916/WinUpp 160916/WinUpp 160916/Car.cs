@@ -19,10 +19,10 @@ namespace WinUpp_160916
 
         public bool booked { get; set; }
 
-        public string CarNameAndNumber()
+        public override string ToString()
         {
 
-            return string.Format("{0} {1}", CarMaker, CarModel);
+            return string.Format("{0} {1} {2}", CarMaker, CarModel, booked.ToString());
 
         }
 

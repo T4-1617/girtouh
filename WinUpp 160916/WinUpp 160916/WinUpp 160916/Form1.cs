@@ -28,6 +28,7 @@ namespace WinUpp_160916
             c.CarModel = "V70";
             c.CarColour = "Black";
             c.CarNumber = "001";
+            c.booked = false;
             Cars.Add(c);
 
             Car f = new Car();
@@ -35,6 +36,7 @@ namespace WinUpp_160916
             f.CarModel = "K";
             f.CarColour = "Green";
             f.CarNumber = "002";
+            f.booked = false;
             Cars.Add(f);
 
             Car d = new Car();
@@ -42,6 +44,7 @@ namespace WinUpp_160916
             d.CarModel = "1222994a0087efd";
             d.CarColour = "Red";
             d.CarNumber = "003";
+            d.booked = false;
             Cars.Add(d);
 
 
@@ -91,21 +94,34 @@ namespace WinUpp_160916
 
         }
 
-        //Confirmed booking
+        //Confirmed booking button
         private void Bookbtn_Click(object sender, EventArgs e)
         {
-            Responselbl2.Text = "Car booked.";
-            Responselbl.Text = "Thank you for your booking!";
-            
-            Car c = (Car)Cars[Avaiblecarlst.SelectedIndex];
-            c.booked = true;
-            //Avaiblecarlst.SelectedIndex = 0;
+
+
+
+            if (Avaiblecarlst.SelectedIndex > -1)
+            {
+                Responselbl2.Text = "Car booked.";
+                Responselbl.Text = "Thank you for your booking!";
+                //Setting car status to Booked
+                Car x = (Car)Avaiblecarlst.SelectedItem;
+                x.booked = true;
+
+            }
+            else
+            {
+
+                Responselbl2.Text = "No car selected.";
+                Responselbl.Text = "Please select a car to book.";
+
+            }
             Updatecarlist();
 
 
         }
 
-        //Confirming add car
+        //Confirming add car button
         private void Confirmaddcarbtn_Click(object sender, EventArgs e)
         {
             Responselbl.Text = "Car added!";
@@ -117,6 +133,7 @@ namespace WinUpp_160916
             b.CarNumber = CarNumbertxt.Text;
             Cars.Add(b);
 
+            //Clearing text boxes for next use
             CarMakertxt.Text = string.Empty;
             CarModeltxt.Text = string.Empty;
             CarColourtxt.Text = string.Empty;
@@ -125,50 +142,62 @@ namespace WinUpp_160916
 
         }
 
-        //Confirming return car
+        //Confirming return car button
         private void Returnconfirmbtn_Click(object sender, EventArgs e)
         {
+            if (Carreturnlst.SelectedIndex > -1)
+            {
+                Responselbl2.Text = "Car returned.";
+                Responselbl.Text = "Thank you for your buisness!";
+                //Setting car status to Avaible
+                Car c = (Car)Carreturnlst.SelectedItem;
+                c.booked = false;
+            }
+            else
+            {
 
-            Responselbl2.Text = "Car returned.";
-            Responselbl.Text = "Thank you for your buisness!";
-            Car c = (Car)Cars[Carreturnlst.SelectedIndex];
-            c.booked = false;
-            //Avaiblecarlst.SelectedIndex = ;
+                Responselbl2.Text = "No car selected.";
+                Responselbl.Text = "Please select a car to return.";
+
+            }
             UppdateReturnlist();
             Updatecarlist();
-
         }
 
-        //Function to update the list of available cars (Under coding)
+        //Function to update the list of available cars
         public void Updatecarlist()
         {
+            //Remove all objects in list
             Avaiblecarlst.Items.Clear();
             foreach (Car x in Cars)
             {
+                //Re-adding correct objects
                 if (x.booked == false)
                 {
-                    Avaiblecarlst.Items.Add(x.CarNameAndNumber());
+                    Avaiblecarlst.Items.Add(x);
                 }
-                
+
             }
             CarinList = Avaiblecarlst.Items.Count;
 
             CarAvaiblelbl.Text = string.Format("We have {0} cars available.", CarinList);
-
-
         }
+
+        //Function to update the booked list
         public void UppdateReturnlist()
         {
+            //Remove all objects in list
             Carreturnlst.Items.Clear();
 
             foreach (Car x in Cars)
             {
+                //Re-adding correct objects
                 if (x.booked == true)
-                Carreturnlst.Items.Add(x.CarNameAndNumber());
+                    Carreturnlst.Items.Add(x);
             }
 
         }
-
+        //Cancel button
         private void Cancelbtn2_Click(object sender, EventArgs e)
         {
             Availablecarpnl.Visible = true;
@@ -178,6 +207,7 @@ namespace WinUpp_160916
             Returncarpnl.Visible = false;
         }
 
+        //Cancel button
         private void Canceladdbtn_Click(object sender, EventArgs e)
         {
             Availablecarpnl.Visible = true;
@@ -186,5 +216,6 @@ namespace WinUpp_160916
             Addcarpnl.Visible = false;
             Returncarpnl.Visible = false;
         }
+
     }
 }
