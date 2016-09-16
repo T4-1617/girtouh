@@ -13,7 +13,6 @@ namespace WinUpp_160916
     public partial class Form1 : Form
     {
         System.Collections.ArrayList Cars;
-        System.Collections.ArrayList BookedCars;
         int CarinList = new int();
 
 
@@ -23,7 +22,6 @@ namespace WinUpp_160916
 
             //Adding Cars arraylist
             Cars = new System.Collections.ArrayList();
-            BookedCars = new System.Collections.ArrayList();
 
             Car c = new Car();
             c.CarMaker = "Volvo";
@@ -89,8 +87,6 @@ namespace WinUpp_160916
             Responselbl2.Text = string.Empty;
             Responselbl.Text = string.Empty;
             Addcarpnl.Visible = false;
-
-
             UppdateReturnlist();
 
         }
@@ -100,8 +96,10 @@ namespace WinUpp_160916
         {
             Responselbl2.Text = "Car booked.";
             Responselbl.Text = "Thank you for your booking!";
-            BookedCars.Add(Cars[Avaiblecarlst.SelectedIndex]);
-            Cars.Remove(Cars[Avaiblecarlst.SelectedIndex]);
+            
+            Car c = (Car)Cars[Avaiblecarlst.SelectedIndex];
+            c.booked = true;
+            //Avaiblecarlst.SelectedIndex = 0;
             Updatecarlist();
 
 
@@ -122,7 +120,7 @@ namespace WinUpp_160916
             CarMakertxt.Text = string.Empty;
             CarModeltxt.Text = string.Empty;
             CarColourtxt.Text = string.Empty;
-            CarNumbertxt.Text=string.Empty;
+            CarNumbertxt.Text = string.Empty;
 
 
         }
@@ -130,14 +128,14 @@ namespace WinUpp_160916
         //Confirming return car
         private void Returnconfirmbtn_Click(object sender, EventArgs e)
         {
-            
+
             Responselbl2.Text = "Car returned.";
             Responselbl.Text = "Thank you for your buisness!";
-            BookedCars.Remove(Cars[Avaiblecarlst.SelectedIndex]);
-            Cars.Add(Cars[Avaiblecarlst.SelectedIndex]);
+            Car c = (Car)Cars[Carreturnlst.SelectedIndex];
+            c.booked = false;
+            //Avaiblecarlst.SelectedIndex = ;
             UppdateReturnlist();
             Updatecarlist();
-
 
         }
 
@@ -145,9 +143,13 @@ namespace WinUpp_160916
         public void Updatecarlist()
         {
             Avaiblecarlst.Items.Clear();
-            foreach (Car item in Cars)
+            foreach (Car x in Cars)
             {
-                Avaiblecarlst.Items.Add(item.CarNameAndNumber());
+                if (x.booked == false)
+                {
+                    Avaiblecarlst.Items.Add(x.CarNameAndNumber());
+                }
+                
             }
             CarinList = Avaiblecarlst.Items.Count;
 
@@ -159,10 +161,12 @@ namespace WinUpp_160916
         {
             Carreturnlst.Items.Clear();
 
-            foreach (Car item in BookedCars)
+            foreach (Car x in Cars)
             {
-                Carreturnlst.Items.Add(item.CarNameAndNumber());
+                if (x.booked == true)
+                Carreturnlst.Items.Add(x.CarNameAndNumber());
             }
+
         }
 
         private void Cancelbtn2_Click(object sender, EventArgs e)

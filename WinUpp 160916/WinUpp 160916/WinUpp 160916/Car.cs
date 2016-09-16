@@ -17,6 +17,8 @@ namespace WinUpp_160916
 
         public string CarNumber { get; set; }
 
+        public bool booked { get; set; }
+
         public string CarNameAndNumber()
         {
 
