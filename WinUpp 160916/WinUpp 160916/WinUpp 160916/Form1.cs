@@ -54,6 +54,7 @@ namespace WinUpp_160916
             Responselbl2.Text = string.Empty;
             Addcarpnl.Visible = false;
             Returncarpnl.Visible = false;
+            ConfirmBookpnl.Visible = false;
 
 
         }
@@ -66,6 +67,7 @@ namespace WinUpp_160916
             Responselbl.Text = string.Empty;
             Addcarpnl.Visible = false;
             Returncarpnl.Visible = false;
+
 
             Updatecarlist();
 
@@ -98,7 +100,12 @@ namespace WinUpp_160916
         private void Bookbtn_Click(object sender, EventArgs e)
         {
 
+            ConfirmBookpnl.Visible = true;
 
+        }
+
+        private void ConfirmBookbtn_Click(object sender, EventArgs e)
+        {
 
             if (Avaiblecarlst.SelectedIndex > -1)
             {
@@ -116,6 +123,7 @@ namespace WinUpp_160916
                 Responselbl.Text = "Please select a car to book.";
 
             }
+            ConfirmBookpnl.Visible = false;
             Updatecarlist();
 
 
@@ -207,6 +215,8 @@ namespace WinUpp_160916
             Responselbl.Text = string.Empty;
             Addcarpnl.Visible = false;
             Returncarpnl.Visible = false;
+            ConfirmBookpnl.Visible = false;
+
         }
 
         //Cancel button
@@ -217,7 +227,24 @@ namespace WinUpp_160916
             Responselbl.Text = string.Empty;
             Addcarpnl.Visible = false;
             Returncarpnl.Visible = false;
+            ConfirmBookpnl.Visible = false;
+
         }
+
+        //Cancel button
+        private void Cancelbtn3_Click(object sender, EventArgs e)
+        {
+            Availablecarpnl.Visible = true;
+            Responselbl2.Text = string.Empty;
+            Responselbl.Text = string.Empty;
+            Addcarpnl.Visible = false;
+            Returncarpnl.Visible = false;
+            ConfirmBookpnl.Visible = false;
+            FirstNametxt.Text = string.Empty;
+            LastNametxt.Text = string.Empty;
+
+        }
+
 
     }
 }
