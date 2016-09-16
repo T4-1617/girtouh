@@ -139,6 +139,8 @@ namespace WinUpp_160916
             CarColourtxt.Text = string.Empty;
             CarNumbertxt.Text = string.Empty;
 
+            Updatecarlist();
+
 
         }
 
