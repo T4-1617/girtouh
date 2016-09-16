@@ -63,9 +63,9 @@
             this.CarAvaiblelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CarAvaiblelbl.Location = new System.Drawing.Point(37, 20);
             this.CarAvaiblelbl.Name = "CarAvaiblelbl";
-            this.CarAvaiblelbl.Size = new System.Drawing.Size(278, 29);
+            this.CarAvaiblelbl.Size = new System.Drawing.Size(284, 29);
             this.CarAvaiblelbl.TabIndex = 0;
-            this.CarAvaiblelbl.Text = "We have 3 cars available";
+            this.CarAvaiblelbl.Text = "We have 3 cars available.";
             // 
             // Showcarbtn
             // 
@@ -300,13 +300,13 @@
             this.ClientSize = new System.Drawing.Size(717, 532);
             this.Controls.Add(this.Responselbl2);
             this.Controls.Add(this.Responselbl);
-            this.Controls.Add(this.Returncarpnl);
             this.Controls.Add(this.Returncarbtn);
             this.Controls.Add(this.Addcarbtn);
             this.Controls.Add(this.Showcarbtn);
             this.Controls.Add(this.CarAvaiblelbl);
-            this.Controls.Add(this.Availablecarpnl);
             this.Controls.Add(this.Addcarpnl);
+            this.Controls.Add(this.Returncarpnl);
+            this.Controls.Add(this.Availablecarpnl);
             this.Name = "Form1";
             this.Text = "ACME CARS";
             this.Availablecarpnl.ResumeLayout(false);

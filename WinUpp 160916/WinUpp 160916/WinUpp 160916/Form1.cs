@@ -12,11 +12,38 @@ namespace WinUpp_160916
 {
     public partial class Form1 : Form
     {
+        System.Collections.ArrayList Cars;
+        int CarinList = new int();
 
 
         public Form1()
         {
             InitializeComponent();
+
+            //Adding Cars arraylist
+            Cars = new System.Collections.ArrayList();
+
+            Car c = new Car();
+            c.CarMaker = "Volvo";
+            c.CarModel = "V70";
+            c.CarColour = "Black";
+            c.CarNumber = "001";
+            Cars.Add(c);
+
+            Car f = new Car();
+            f.CarMaker = "BMW";
+            f.CarModel = "K";
+            f.CarColour = "Green";
+            f.CarNumber = "002";
+            Cars.Add(f);
+
+            Car d = new Car();
+            d.CarMaker = "Suzuki";
+            d.CarModel = "1222994a0087efd";
+            d.CarColour = "Red";
+            d.CarNumber = "003";
+            Cars.Add(d);
+
 
             //Setting start screen to neutral
             Availablecarpnl.Visible = false;
@@ -24,6 +51,7 @@ namespace WinUpp_160916
             Responselbl2.Text = string.Empty;
             Addcarpnl.Visible = false;
             Returncarpnl.Visible = false;
+
 
         }
 
@@ -36,6 +64,7 @@ namespace WinUpp_160916
             Addcarpnl.Visible = false;
             Returncarpnl.Visible = false;
 
+            Updatecarlist();
 
         }
 
@@ -73,6 +102,14 @@ namespace WinUpp_160916
         private void Confirmaddcarbtn_Click(object sender, EventArgs e)
         {
             Responselbl.Text = "Car added!";
+            //Adding car 
+            Car d = new Car();
+            d.CarMaker = "Suzuki";
+            d.CarModel = "1222994a0087efd";
+            d.CarColour = "Red";
+            d.CarNumber = "003";
+            Cars.Add(d);
+
 
         }
 
@@ -81,6 +118,21 @@ namespace WinUpp_160916
         {
             Responselbl2.Text = "Car returned.";
             Responselbl.Text = "Thank you for your buisness!";
+        }
+
+        //Function to update the list of available cars (Under coding)
+        public void Updatecarlist()
+        {
+            Avaiblecarlst.Items.Clear();
+            foreach (Car item in Cars)
+            {
+                Avaiblecarlst.Items.Add(item.CarNameAndNumber());
+            }
+            CarinList = Avaiblecarlst.Items.Count;
+
+            CarAvaiblelbl.Text=string.Format("We have {0} cars available.", CarinList);
+
+
         }
     }
 }

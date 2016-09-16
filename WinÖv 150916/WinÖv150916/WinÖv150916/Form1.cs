@@ -57,6 +57,8 @@ namespace WinÖv150916
             emp.LastName = txtLastName.Text;
 
             CustomersAndEmployees.Add(emp);
+            txtFirstName.Text = string.Empty;
+            txtLastName.Text = string.Empty;
 
             /*      foreach(var xxx in Customers)
                   {
@@ -80,7 +82,7 @@ namespace WinÖv150916
                         listBox1.Items.Add(xxx);
                         break;
                     case "Employee":
-                        listBox1.Items.Add("Employee:" + xxx);
+                        listBox1.Items.Add("Employee: " + xxx);
                         break;
                     default:
                         break;
