@@ -48,11 +48,11 @@
             this.CarMakertxt = new System.Windows.Forms.TextBox();
             this.Responselbl = new System.Windows.Forms.Label();
             this.Returncarpnl = new System.Windows.Forms.Panel();
+            this.Infobtn = new System.Windows.Forms.Button();
             this.Carreturnlst = new System.Windows.Forms.ListBox();
             this.Cancelbtn2 = new System.Windows.Forms.Button();
             this.Returnconfirmbtn = new System.Windows.Forms.Button();
             this.Responselbl2 = new System.Windows.Forms.Label();
-            this.lbldebug = new System.Windows.Forms.Label();
             this.ConfirmBookpnl = new System.Windows.Forms.Panel();
             this.Cancelbtn3 = new System.Windows.Forms.Button();
             this.ConfirmBookbtn = new System.Windows.Forms.Button();
@@ -61,7 +61,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.LastNametxt = new System.Windows.Forms.TextBox();
             this.FirstNametxt = new System.Windows.Forms.TextBox();
-            this.Infobtn = new System.Windows.Forms.Button();
             this.Availablecarpnl.SuspendLayout();
             this.Addcarpnl.SuspendLayout();
             this.Returncarpnl.SuspendLayout();
@@ -267,6 +266,16 @@
             this.Returncarpnl.Size = new System.Drawing.Size(426, 300);
             this.Returncarpnl.TabIndex = 5;
             // 
+            // Infobtn
+            // 
+            this.Infobtn.Location = new System.Drawing.Point(141, 268);
+            this.Infobtn.Name = "Infobtn";
+            this.Infobtn.Size = new System.Drawing.Size(131, 23);
+            this.Infobtn.TabIndex = 3;
+            this.Infobtn.Text = "Information";
+            this.Infobtn.UseVisualStyleBackColor = true;
+            this.Infobtn.Click += new System.EventHandler(this.Infobtn_Click);
+            // 
             // Carreturnlst
             // 
             this.Carreturnlst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -306,15 +315,6 @@
             this.Responselbl2.Size = new System.Drawing.Size(51, 20);
             this.Responselbl2.TabIndex = 6;
             this.Responselbl2.Text = "label1";
-            // 
-            // lbldebug
-            // 
-            this.lbldebug.AutoSize = true;
-            this.lbldebug.Location = new System.Drawing.Point(509, 35);
-            this.lbldebug.Name = "lbldebug";
-            this.lbldebug.Size = new System.Drawing.Size(35, 13);
-            this.lbldebug.TabIndex = 7;
-            this.lbldebug.Text = "label5";
             // 
             // ConfirmBookpnl
             // 
@@ -396,22 +396,11 @@
             this.FirstNametxt.Size = new System.Drawing.Size(165, 29);
             this.FirstNametxt.TabIndex = 0;
             // 
-            // Infobtn
-            // 
-            this.Infobtn.Location = new System.Drawing.Point(141, 268);
-            this.Infobtn.Name = "Infobtn";
-            this.Infobtn.Size = new System.Drawing.Size(131, 23);
-            this.Infobtn.TabIndex = 3;
-            this.Infobtn.Text = "Information";
-            this.Infobtn.UseVisualStyleBackColor = true;
-            this.Infobtn.Click += new System.EventHandler(this.Infobtn_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 532);
-            this.Controls.Add(this.lbldebug);
             this.Controls.Add(this.Responselbl2);
             this.Controls.Add(this.Responselbl);
             this.Controls.Add(this.Returncarbtn);
@@ -461,7 +450,6 @@
         private System.Windows.Forms.Button Returnconfirmbtn;
         private System.Windows.Forms.ListBox Carreturnlst;
         private System.Windows.Forms.Label Responselbl2;
-        private System.Windows.Forms.Label lbldebug;
         private System.Windows.Forms.Panel ConfirmBookpnl;
         private System.Windows.Forms.Button Cancelbtn3;
         private System.Windows.Forms.Button ConfirmBookbtn;
