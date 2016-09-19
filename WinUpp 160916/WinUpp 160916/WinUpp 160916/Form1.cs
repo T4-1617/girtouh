@@ -12,6 +12,7 @@ namespace WinUpp_160916
 {
     public partial class Form1 : Form
     {
+        System.Collections.ArrayList CustomersAndCars;
         System.Collections.ArrayList Cars;
         int CarinList = new int();
 
@@ -22,6 +23,8 @@ namespace WinUpp_160916
 
             //Adding Cars arraylist
             Cars = new System.Collections.ArrayList();
+            CustomersAndCars = new System.Collections.ArrayList();
+
 
             Car c = new Car();
             c.CarMaker = "Volvo";
@@ -41,7 +44,7 @@ namespace WinUpp_160916
 
             Car d = new Car();
             d.CarMaker = "Suzuki";
-            d.CarModel = "1222994a0087efd";
+            d.CarModel = "MVP";
             d.CarColour = "Red";
             d.CarNumber = "003";
             d.booked = false;
@@ -106,14 +109,23 @@ namespace WinUpp_160916
 
         private void ConfirmBookbtn_Click(object sender, EventArgs e)
         {
-
+            //Adding safe to booking
             if (Avaiblecarlst.SelectedIndex > -1)
             {
+
+                Customer h = new Customer();
+                h.Firstname = FirstNametxt.Text;
+                h.Lastname = LastNametxt.Text;
+                CustomersAndCars.Add(h);
+
+
                 Responselbl2.Text = "Car booked.";
                 Responselbl.Text = "Thank you for your booking!";
                 //Setting car status to Booked
                 Car x = (Car)Avaiblecarlst.SelectedItem;
+                x.hiredBy = h;
                 x.booked = true;
+
 
             }
             else
@@ -152,6 +164,24 @@ namespace WinUpp_160916
 
         }
 
+        //Show car info when pressed
+
+        private void Infobtn_Click(object sender, EventArgs e)
+        {
+            if (Avaiblecarlst.SelectedIndex > -1)
+            {
+                Car car = (Car)Carreturnlst.SelectedItem;
+                MessageBox.Show(string.Format("{0} Booked by {1}", car, car.hiredBy));
+            }
+            else
+            {
+
+                Responselbl2.Text = "No car selected.";
+                Responselbl.Text = "Please select a car to view.";
+
+            }
+        }
+
         //Confirming return car button
         private void Returnconfirmbtn_Click(object sender, EventArgs e)
         {
@@ -161,6 +191,7 @@ namespace WinUpp_160916
                 Responselbl.Text = "Thank you for your buisness!";
                 //Setting car status to Avaible
                 Car c = (Car)Carreturnlst.SelectedItem;
+                c.hiredBy = null;
                 c.booked = false;
             }
             else

@@ -54,13 +54,14 @@
             this.Responselbl2 = new System.Windows.Forms.Label();
             this.lbldebug = new System.Windows.Forms.Label();
             this.ConfirmBookpnl = new System.Windows.Forms.Panel();
-            this.FirstNametxt = new System.Windows.Forms.TextBox();
-            this.LastNametxt = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.ConfirmBookbtn = new System.Windows.Forms.Button();
             this.Cancelbtn3 = new System.Windows.Forms.Button();
+            this.ConfirmBookbtn = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.LastNametxt = new System.Windows.Forms.TextBox();
+            this.FirstNametxt = new System.Windows.Forms.TextBox();
+            this.Infobtn = new System.Windows.Forms.Button();
             this.Availablecarpnl.SuspendLayout();
             this.Addcarpnl.SuspendLayout();
             this.Returncarpnl.SuspendLayout();
@@ -257,6 +258,7 @@
             // 
             // Returncarpnl
             // 
+            this.Returncarpnl.Controls.Add(this.Infobtn);
             this.Returncarpnl.Controls.Add(this.Carreturnlst);
             this.Returncarpnl.Controls.Add(this.Cancelbtn2);
             this.Returncarpnl.Controls.Add(this.Returnconfirmbtn);
@@ -277,7 +279,7 @@
             // 
             // Cancelbtn2
             // 
-            this.Cancelbtn2.Location = new System.Drawing.Point(268, 271);
+            this.Cancelbtn2.Location = new System.Drawing.Point(278, 269);
             this.Cancelbtn2.Name = "Cancelbtn2";
             this.Cancelbtn2.Size = new System.Drawing.Size(131, 23);
             this.Cancelbtn2.TabIndex = 2;
@@ -325,64 +327,8 @@
             this.ConfirmBookpnl.Controls.Add(this.FirstNametxt);
             this.ConfirmBookpnl.Location = new System.Drawing.Point(59, 178);
             this.ConfirmBookpnl.Name = "ConfirmBookpnl";
-            this.ConfirmBookpnl.Size = new System.Drawing.Size(420, 292);
+            this.ConfirmBookpnl.Size = new System.Drawing.Size(423, 297);
             this.ConfirmBookpnl.TabIndex = 2;
-            // 
-            // FirstNametxt
-            // 
-            this.FirstNametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstNametxt.Location = new System.Drawing.Point(127, 83);
-            this.FirstNametxt.Name = "FirstNametxt";
-            this.FirstNametxt.Size = new System.Drawing.Size(165, 29);
-            this.FirstNametxt.TabIndex = 0;
-            // 
-            // LastNametxt
-            // 
-            this.LastNametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LastNametxt.Location = new System.Drawing.Point(127, 126);
-            this.LastNametxt.Name = "LastNametxt";
-            this.LastNametxt.Size = new System.Drawing.Size(165, 29);
-            this.LastNametxt.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(28, 85);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 24);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Firstname";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(30, 129);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 24);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Lastname";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(85, 17);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(210, 24);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Please enter your name";
-            // 
-            // ConfirmBookbtn
-            // 
-            this.ConfirmBookbtn.Location = new System.Drawing.Point(44, 217);
-            this.ConfirmBookbtn.Name = "ConfirmBookbtn";
-            this.ConfirmBookbtn.Size = new System.Drawing.Size(94, 38);
-            this.ConfirmBookbtn.TabIndex = 5;
-            this.ConfirmBookbtn.Text = "Confirm";
-            this.ConfirmBookbtn.UseVisualStyleBackColor = true;
-            this.ConfirmBookbtn.Click += new System.EventHandler(this.ConfirmBookbtn_Click);
             // 
             // Cancelbtn3
             // 
@@ -394,12 +340,77 @@
             this.Cancelbtn3.UseVisualStyleBackColor = true;
             this.Cancelbtn3.Click += new System.EventHandler(this.Cancelbtn3_Click);
             // 
+            // ConfirmBookbtn
+            // 
+            this.ConfirmBookbtn.Location = new System.Drawing.Point(44, 217);
+            this.ConfirmBookbtn.Name = "ConfirmBookbtn";
+            this.ConfirmBookbtn.Size = new System.Drawing.Size(94, 38);
+            this.ConfirmBookbtn.TabIndex = 5;
+            this.ConfirmBookbtn.Text = "Confirm";
+            this.ConfirmBookbtn.UseVisualStyleBackColor = true;
+            this.ConfirmBookbtn.Click += new System.EventHandler(this.ConfirmBookbtn_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(85, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(210, 24);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Please enter your name";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(30, 129);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 24);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Lastname";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(28, 85);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(93, 24);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Firstname";
+            // 
+            // LastNametxt
+            // 
+            this.LastNametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastNametxt.Location = new System.Drawing.Point(127, 126);
+            this.LastNametxt.Name = "LastNametxt";
+            this.LastNametxt.Size = new System.Drawing.Size(165, 29);
+            this.LastNametxt.TabIndex = 1;
+            // 
+            // FirstNametxt
+            // 
+            this.FirstNametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstNametxt.Location = new System.Drawing.Point(127, 83);
+            this.FirstNametxt.Name = "FirstNametxt";
+            this.FirstNametxt.Size = new System.Drawing.Size(165, 29);
+            this.FirstNametxt.TabIndex = 0;
+            // 
+            // Infobtn
+            // 
+            this.Infobtn.Location = new System.Drawing.Point(141, 268);
+            this.Infobtn.Name = "Infobtn";
+            this.Infobtn.Size = new System.Drawing.Size(131, 23);
+            this.Infobtn.TabIndex = 3;
+            this.Infobtn.Text = "Information";
+            this.Infobtn.UseVisualStyleBackColor = true;
+            this.Infobtn.Click += new System.EventHandler(this.Infobtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 532);
-            this.Controls.Add(this.ConfirmBookpnl);
             this.Controls.Add(this.lbldebug);
             this.Controls.Add(this.Responselbl2);
             this.Controls.Add(this.Responselbl);
@@ -407,9 +418,10 @@
             this.Controls.Add(this.Addcarbtn);
             this.Controls.Add(this.Showcarbtn);
             this.Controls.Add(this.CarAvaiblelbl);
+            this.Controls.Add(this.Returncarpnl);
+            this.Controls.Add(this.ConfirmBookpnl);
             this.Controls.Add(this.Availablecarpnl);
             this.Controls.Add(this.Addcarpnl);
-            this.Controls.Add(this.Returncarpnl);
             this.Name = "Form1";
             this.Text = "ACME CARS";
             this.Availablecarpnl.ResumeLayout(false);
@@ -458,6 +470,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox LastNametxt;
         private System.Windows.Forms.TextBox FirstNametxt;
+        private System.Windows.Forms.Button Infobtn;
     }
 }
 
