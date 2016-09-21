@@ -17,12 +17,14 @@ namespace WinUpp_210916
             return string.Format("{0} {1}", CustomerFirstName, CustomerLastName);
         }
 
+        public string CustomerIDNumber { get; set; }
+
         public string CustomerTel { get; set; }
 
         public override string ToString()
 
         {
-            return string.Format("{0} {1} Tel.Number: {2}", CustomerFirstName, CustomerLastName, CustomerTel);
+            return string.Format("{0} {1} Tel.Number: {2}. CustomerNumber:{3}", CustomerFirstName, CustomerLastName, CustomerTel, CustomerIDNumber);
         }
 
     }

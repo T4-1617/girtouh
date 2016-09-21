@@ -92,19 +92,19 @@
             this.Deliverpnl.Controls.Add(this.DeliveryComtxtbx);
             this.Deliverpnl.Controls.Add(this.DeliverySavebtn);
             this.Deliverpnl.Controls.Add(this.Cancelbtn2);
-            this.Deliverpnl.Location = new System.Drawing.Point(346, 281);
+            this.Deliverpnl.Location = new System.Drawing.Point(371, 281);
             this.Deliverpnl.Name = "Deliverpnl";
-            this.Deliverpnl.Size = new System.Drawing.Size(271, 227);
+            this.Deliverpnl.Size = new System.Drawing.Size(246, 227);
             this.Deliverpnl.TabIndex = 2;
             // 
             // Personallstbx
             // 
-            this.Personallstbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Personallstbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Personallstbx.FormattingEnabled = true;
-            this.Personallstbx.ItemHeight = 20;
+            this.Personallstbx.ItemHeight = 16;
             this.Personallstbx.Location = new System.Drawing.Point(31, 284);
             this.Personallstbx.Name = "Personallstbx";
-            this.Personallstbx.Size = new System.Drawing.Size(295, 224);
+            this.Personallstbx.Size = new System.Drawing.Size(321, 212);
             this.Personallstbx.TabIndex = 3;
             // 
             // CustomerSavebtn
