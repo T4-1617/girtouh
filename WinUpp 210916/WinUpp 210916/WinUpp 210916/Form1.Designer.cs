@@ -31,40 +31,40 @@
             this.Customerpnl = new System.Windows.Forms.Panel();
             this.Deliverpnl = new System.Windows.Forms.Panel();
             this.Personallstbx = new System.Windows.Forms.ListBox();
-            this.Savebtn1 = new System.Windows.Forms.Button();
+            this.CustomerSavebtn = new System.Windows.Forms.Button();
             this.Cancelbtn1 = new System.Windows.Forms.Button();
             this.Cancelbtn2 = new System.Windows.Forms.Button();
-            this.Savebtn2 = new System.Windows.Forms.Button();
+            this.DeliverySavebtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Categorycombx = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.CustomerFNtxtbx = new System.Windows.Forms.TextBox();
+            this.CustomerTeltxtbx = new System.Windows.Forms.TextBox();
+            this.CustomerLNtxtbx = new System.Windows.Forms.TextBox();
+            this.DeliveryComtxtbx = new System.Windows.Forms.TextBox();
+            this.DeliveryComptxtbx = new System.Windows.Forms.TextBox();
+            this.DeliveryTeltxtbx = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.Employerpnl = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.EmployeeTitletxtbx = new System.Windows.Forms.TextBox();
+            this.EmployeeLNtxtbx = new System.Windows.Forms.TextBox();
+            this.EmployeeTeltxtbx = new System.Windows.Forms.TextBox();
+            this.EmployeeFNtxtbx = new System.Windows.Forms.TextBox();
+            this.Cancelbtn3 = new System.Windows.Forms.Button();
+            this.EmployeeSavebtn = new System.Windows.Forms.Button();
+            this.EmployeeSalarytxtbx = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.Customerpnl.SuspendLayout();
             this.Deliverpnl.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.Employerpnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // Customerpnl
@@ -72,12 +72,12 @@
             this.Customerpnl.Controls.Add(this.label4);
             this.Customerpnl.Controls.Add(this.label3);
             this.Customerpnl.Controls.Add(this.label2);
-            this.Customerpnl.Controls.Add(this.textBox3);
-            this.Customerpnl.Controls.Add(this.textBox2);
-            this.Customerpnl.Controls.Add(this.textBox1);
+            this.Customerpnl.Controls.Add(this.CustomerLNtxtbx);
+            this.Customerpnl.Controls.Add(this.CustomerTeltxtbx);
+            this.Customerpnl.Controls.Add(this.CustomerFNtxtbx);
             this.Customerpnl.Controls.Add(this.Cancelbtn1);
-            this.Customerpnl.Controls.Add(this.Savebtn1);
-            this.Customerpnl.Location = new System.Drawing.Point(31, 96);
+            this.Customerpnl.Controls.Add(this.CustomerSavebtn);
+            this.Customerpnl.Location = new System.Drawing.Point(25, 93);
             this.Customerpnl.Name = "Customerpnl";
             this.Customerpnl.Size = new System.Drawing.Size(586, 160);
             this.Customerpnl.TabIndex = 1;
@@ -87,10 +87,10 @@
             this.Deliverpnl.Controls.Add(this.label12);
             this.Deliverpnl.Controls.Add(this.label11);
             this.Deliverpnl.Controls.Add(this.label5);
-            this.Deliverpnl.Controls.Add(this.textBox7);
-            this.Deliverpnl.Controls.Add(this.textBox6);
-            this.Deliverpnl.Controls.Add(this.textBox5);
-            this.Deliverpnl.Controls.Add(this.Savebtn2);
+            this.Deliverpnl.Controls.Add(this.DeliveryTeltxtbx);
+            this.Deliverpnl.Controls.Add(this.DeliveryComptxtbx);
+            this.Deliverpnl.Controls.Add(this.DeliveryComtxtbx);
+            this.Deliverpnl.Controls.Add(this.DeliverySavebtn);
             this.Deliverpnl.Controls.Add(this.Cancelbtn2);
             this.Deliverpnl.Location = new System.Drawing.Point(346, 281);
             this.Deliverpnl.Name = "Deliverpnl";
@@ -107,14 +107,15 @@
             this.Personallstbx.Size = new System.Drawing.Size(295, 224);
             this.Personallstbx.TabIndex = 3;
             // 
-            // Savebtn1
+            // CustomerSavebtn
             // 
-            this.Savebtn1.Location = new System.Drawing.Point(349, 106);
-            this.Savebtn1.Name = "Savebtn1";
-            this.Savebtn1.Size = new System.Drawing.Size(55, 41);
-            this.Savebtn1.TabIndex = 0;
-            this.Savebtn1.Text = "Save";
-            this.Savebtn1.UseVisualStyleBackColor = true;
+            this.CustomerSavebtn.Location = new System.Drawing.Point(349, 106);
+            this.CustomerSavebtn.Name = "CustomerSavebtn";
+            this.CustomerSavebtn.Size = new System.Drawing.Size(55, 41);
+            this.CustomerSavebtn.TabIndex = 0;
+            this.CustomerSavebtn.Text = "Save";
+            this.CustomerSavebtn.UseVisualStyleBackColor = true;
+            this.CustomerSavebtn.Click += new System.EventHandler(this.CustomerSavebtn_Click);
             // 
             // Cancelbtn1
             // 
@@ -134,14 +135,15 @@
             this.Cancelbtn2.Text = "Cancel";
             this.Cancelbtn2.UseVisualStyleBackColor = true;
             // 
-            // Savebtn2
+            // DeliverySavebtn
             // 
-            this.Savebtn2.Location = new System.Drawing.Point(63, 167);
-            this.Savebtn2.Name = "Savebtn2";
-            this.Savebtn2.Size = new System.Drawing.Size(55, 41);
-            this.Savebtn2.TabIndex = 2;
-            this.Savebtn2.Text = "Save";
-            this.Savebtn2.UseVisualStyleBackColor = true;
+            this.DeliverySavebtn.Location = new System.Drawing.Point(63, 167);
+            this.DeliverySavebtn.Name = "DeliverySavebtn";
+            this.DeliverySavebtn.Size = new System.Drawing.Size(55, 41);
+            this.DeliverySavebtn.TabIndex = 2;
+            this.DeliverySavebtn.Text = "Save";
+            this.DeliverySavebtn.UseVisualStyleBackColor = true;
+            this.DeliverySavebtn.Click += new System.EventHandler(this.DeliverySavebtn_Click);
             // 
             // label1
             // 
@@ -162,53 +164,53 @@
             this.Categorycombx.TabIndex = 5;
             this.Categorycombx.SelectedIndexChanged += new System.EventHandler(this.Categorycombx_SelectedIndexChanged);
             // 
-            // textBox1
+            // CustomerFNtxtbx
             // 
-            this.textBox1.Location = new System.Drawing.Point(118, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(126, 20);
-            this.textBox1.TabIndex = 2;
+            this.CustomerFNtxtbx.Location = new System.Drawing.Point(115, 17);
+            this.CustomerFNtxtbx.Name = "CustomerFNtxtbx";
+            this.CustomerFNtxtbx.Size = new System.Drawing.Size(126, 20);
+            this.CustomerFNtxtbx.TabIndex = 2;
             // 
-            // textBox2
+            // CustomerTeltxtbx
             // 
-            this.textBox2.Location = new System.Drawing.Point(118, 69);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(126, 20);
-            this.textBox2.TabIndex = 3;
+            this.CustomerTeltxtbx.Location = new System.Drawing.Point(115, 69);
+            this.CustomerTeltxtbx.Name = "CustomerTeltxtbx";
+            this.CustomerTeltxtbx.Size = new System.Drawing.Size(126, 20);
+            this.CustomerTeltxtbx.TabIndex = 3;
             // 
-            // textBox3
+            // CustomerLNtxtbx
             // 
-            this.textBox3.Location = new System.Drawing.Point(118, 43);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(126, 20);
-            this.textBox3.TabIndex = 4;
+            this.CustomerLNtxtbx.Location = new System.Drawing.Point(115, 43);
+            this.CustomerLNtxtbx.Name = "CustomerLNtxtbx";
+            this.CustomerLNtxtbx.Size = new System.Drawing.Size(126, 20);
+            this.CustomerLNtxtbx.TabIndex = 4;
             // 
-            // textBox5
+            // DeliveryComtxtbx
             // 
-            this.textBox5.Location = new System.Drawing.Point(139, 14);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 6;
+            this.DeliveryComtxtbx.Location = new System.Drawing.Point(139, 14);
+            this.DeliveryComtxtbx.Name = "DeliveryComtxtbx";
+            this.DeliveryComtxtbx.Size = new System.Drawing.Size(100, 20);
+            this.DeliveryComtxtbx.TabIndex = 6;
             // 
-            // textBox6
+            // DeliveryComptxtbx
             // 
-            this.textBox6.Location = new System.Drawing.Point(139, 40);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 7;
+            this.DeliveryComptxtbx.Location = new System.Drawing.Point(139, 40);
+            this.DeliveryComptxtbx.Name = "DeliveryComptxtbx";
+            this.DeliveryComptxtbx.Size = new System.Drawing.Size(100, 20);
+            this.DeliveryComptxtbx.TabIndex = 7;
             // 
-            // textBox7
+            // DeliveryTeltxtbx
             // 
-            this.textBox7.Location = new System.Drawing.Point(139, 66);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 8;
+            this.DeliveryTeltxtbx.Location = new System.Drawing.Point(139, 66);
+            this.DeliveryTeltxtbx.Name = "DeliveryTeltxtbx";
+            this.DeliveryTeltxtbx.Size = new System.Drawing.Size(100, 20);
+            this.DeliveryTeltxtbx.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 17);
+            this.label2.Location = new System.Drawing.Point(29, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 20);
             this.label2.TabIndex = 6;
@@ -218,7 +220,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 43);
+            this.label3.Location = new System.Drawing.Point(29, 43);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 20);
             this.label3.TabIndex = 7;
@@ -228,30 +230,30 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 69);
+            this.label4.Location = new System.Drawing.Point(3, 69);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 20);
             this.label4.TabIndex = 8;
             this.label4.Text = "Telephone nr.";
             // 
-            // panel1
+            // Employerpnl
             // 
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.textBox12);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.textBox8);
-            this.panel1.Controls.Add(this.textBox9);
-            this.panel1.Controls.Add(this.textBox10);
-            this.panel1.Controls.Add(this.textBox11);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Location = new System.Drawing.Point(28, 96);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(586, 160);
-            this.panel1.TabIndex = 10;
+            this.Employerpnl.Controls.Add(this.label10);
+            this.Employerpnl.Controls.Add(this.EmployeeSalarytxtbx);
+            this.Employerpnl.Controls.Add(this.label6);
+            this.Employerpnl.Controls.Add(this.label7);
+            this.Employerpnl.Controls.Add(this.label8);
+            this.Employerpnl.Controls.Add(this.label9);
+            this.Employerpnl.Controls.Add(this.EmployeeTitletxtbx);
+            this.Employerpnl.Controls.Add(this.EmployeeLNtxtbx);
+            this.Employerpnl.Controls.Add(this.EmployeeTeltxtbx);
+            this.Employerpnl.Controls.Add(this.EmployeeFNtxtbx);
+            this.Employerpnl.Controls.Add(this.Cancelbtn3);
+            this.Employerpnl.Controls.Add(this.EmployeeSavebtn);
+            this.Employerpnl.Location = new System.Drawing.Point(22, 96);
+            this.Employerpnl.Name = "Employerpnl";
+            this.Employerpnl.Size = new System.Drawing.Size(586, 160);
+            this.Employerpnl.TabIndex = 10;
             // 
             // label6
             // 
@@ -293,58 +295,59 @@
             this.label9.TabIndex = 6;
             this.label9.Text = "Firstname";
             // 
-            // textBox8
+            // EmployeeTitletxtbx
             // 
-            this.textBox8.Location = new System.Drawing.Point(371, 17);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(126, 20);
-            this.textBox8.TabIndex = 5;
+            this.EmployeeTitletxtbx.Location = new System.Drawing.Point(371, 17);
+            this.EmployeeTitletxtbx.Name = "EmployeeTitletxtbx";
+            this.EmployeeTitletxtbx.Size = new System.Drawing.Size(126, 20);
+            this.EmployeeTitletxtbx.TabIndex = 5;
             // 
-            // textBox9
+            // EmployeeLNtxtbx
             // 
-            this.textBox9.Location = new System.Drawing.Point(118, 43);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(126, 20);
-            this.textBox9.TabIndex = 4;
+            this.EmployeeLNtxtbx.Location = new System.Drawing.Point(118, 43);
+            this.EmployeeLNtxtbx.Name = "EmployeeLNtxtbx";
+            this.EmployeeLNtxtbx.Size = new System.Drawing.Size(126, 20);
+            this.EmployeeLNtxtbx.TabIndex = 4;
             // 
-            // textBox10
+            // EmployeeTeltxtbx
             // 
-            this.textBox10.Location = new System.Drawing.Point(118, 69);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(126, 20);
-            this.textBox10.TabIndex = 3;
+            this.EmployeeTeltxtbx.Location = new System.Drawing.Point(118, 69);
+            this.EmployeeTeltxtbx.Name = "EmployeeTeltxtbx";
+            this.EmployeeTeltxtbx.Size = new System.Drawing.Size(126, 20);
+            this.EmployeeTeltxtbx.TabIndex = 3;
             // 
-            // textBox11
+            // EmployeeFNtxtbx
             // 
-            this.textBox11.Location = new System.Drawing.Point(118, 17);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(126, 20);
-            this.textBox11.TabIndex = 2;
+            this.EmployeeFNtxtbx.Location = new System.Drawing.Point(118, 17);
+            this.EmployeeFNtxtbx.Name = "EmployeeFNtxtbx";
+            this.EmployeeFNtxtbx.Size = new System.Drawing.Size(126, 20);
+            this.EmployeeFNtxtbx.TabIndex = 2;
             // 
-            // button1
+            // Cancelbtn3
             // 
-            this.button1.Location = new System.Drawing.Point(410, 106);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 41);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Cancelbtn3.Location = new System.Drawing.Point(410, 106);
+            this.Cancelbtn3.Name = "Cancelbtn3";
+            this.Cancelbtn3.Size = new System.Drawing.Size(55, 41);
+            this.Cancelbtn3.TabIndex = 1;
+            this.Cancelbtn3.Text = "Cancel";
+            this.Cancelbtn3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // EmployeeSavebtn
             // 
-            this.button2.Location = new System.Drawing.Point(349, 106);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(55, 41);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
+            this.EmployeeSavebtn.Location = new System.Drawing.Point(349, 106);
+            this.EmployeeSavebtn.Name = "EmployeeSavebtn";
+            this.EmployeeSavebtn.Size = new System.Drawing.Size(55, 41);
+            this.EmployeeSavebtn.TabIndex = 0;
+            this.EmployeeSavebtn.Text = "Save";
+            this.EmployeeSavebtn.UseVisualStyleBackColor = true;
+            this.EmployeeSavebtn.Click += new System.EventHandler(this.EmployeeSavebtn_Click);
             // 
-            // textBox12
+            // EmployeeSalarytxtbx
             // 
-            this.textBox12.Location = new System.Drawing.Point(371, 45);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(126, 20);
-            this.textBox12.TabIndex = 10;
+            this.EmployeeSalarytxtbx.Location = new System.Drawing.Point(371, 45);
+            this.EmployeeSalarytxtbx.Name = "EmployeeSalarytxtbx";
+            this.EmployeeSalarytxtbx.Size = new System.Drawing.Size(126, 20);
+            this.EmployeeSalarytxtbx.TabIndex = 10;
             // 
             // label10
             // 
@@ -396,15 +399,15 @@
             this.Controls.Add(this.Personallstbx);
             this.Controls.Add(this.Deliverpnl);
             this.Controls.Add(this.Customerpnl);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.Employerpnl);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Customerpnl.ResumeLayout(false);
             this.Customerpnl.PerformLayout();
             this.Deliverpnl.ResumeLayout(false);
             this.Deliverpnl.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Employerpnl.ResumeLayout(false);
+            this.Employerpnl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,37 +417,37 @@
         private System.Windows.Forms.Panel Customerpnl;
         private System.Windows.Forms.Panel Deliverpnl;
         private System.Windows.Forms.Button Cancelbtn1;
-        private System.Windows.Forms.Button Savebtn1;
-        private System.Windows.Forms.Button Savebtn2;
+        private System.Windows.Forms.Button CustomerSavebtn;
+        private System.Windows.Forms.Button DeliverySavebtn;
         private System.Windows.Forms.Button Cancelbtn2;
         private System.Windows.Forms.ListBox Personallstbx;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox Categorycombx;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox CustomerLNtxtbx;
+        private System.Windows.Forms.TextBox CustomerTeltxtbx;
+        private System.Windows.Forms.TextBox CustomerFNtxtbx;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox DeliveryTeltxtbx;
+        private System.Windows.Forms.TextBox DeliveryComptxtbx;
+        private System.Windows.Forms.TextBox DeliveryComtxtbx;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel Employerpnl;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox EmployeeSalarytxtbx;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox EmployeeTitletxtbx;
+        private System.Windows.Forms.TextBox EmployeeLNtxtbx;
+        private System.Windows.Forms.TextBox EmployeeTeltxtbx;
+        private System.Windows.Forms.TextBox EmployeeFNtxtbx;
+        private System.Windows.Forms.Button Cancelbtn3;
+        private System.Windows.Forms.Button EmployeeSavebtn;
     }
 }
 

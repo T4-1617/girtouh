@@ -12,7 +12,6 @@ namespace WinUpp_160916
 {
     public partial class Form1 : Form
     {
-        System.Collections.ArrayList CustomersAndCars;
         System.Collections.ArrayList Cars;
         int CarinList = new int();
 
@@ -23,7 +22,6 @@ namespace WinUpp_160916
 
             //Adding Cars arraylist
             Cars = new System.Collections.ArrayList();
-            CustomersAndCars = new System.Collections.ArrayList();
 
 
             Car c = new Car();
