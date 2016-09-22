@@ -29,24 +29,29 @@
         private void InitializeComponent()
         {
             this.Customerpnl = new System.Windows.Forms.Panel();
-            this.Deliverpnl = new System.Windows.Forms.Panel();
-            this.Personallstbx = new System.Windows.Forms.ListBox();
-            this.CustomerSavebtn = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.CustomerLNtxtbx = new System.Windows.Forms.TextBox();
+            this.CustomerTeltxtbx = new System.Windows.Forms.TextBox();
+            this.CustomerFNtxtbx = new System.Windows.Forms.TextBox();
             this.Cancelbtn1 = new System.Windows.Forms.Button();
+            this.CustomerSavebtn = new System.Windows.Forms.Button();
+            this.Supplierpnl = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.SupplierTeltxtbx = new System.Windows.Forms.TextBox();
+            this.SupplierComptxtbx = new System.Windows.Forms.TextBox();
+            this.SupplierComtxtbx = new System.Windows.Forms.TextBox();
+            this.SupplierSavebtn = new System.Windows.Forms.Button();
             this.Cancelbtn2 = new System.Windows.Forms.Button();
-            this.DeliverySavebtn = new System.Windows.Forms.Button();
+            this.Personallstbx = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Categorycombx = new System.Windows.Forms.ComboBox();
-            this.CustomerFNtxtbx = new System.Windows.Forms.TextBox();
-            this.CustomerTeltxtbx = new System.Windows.Forms.TextBox();
-            this.CustomerLNtxtbx = new System.Windows.Forms.TextBox();
-            this.DeliveryComtxtbx = new System.Windows.Forms.TextBox();
-            this.DeliveryComptxtbx = new System.Windows.Forms.TextBox();
-            this.DeliveryTeltxtbx = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.Employerpnl = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.EmployeeSalarytxtbx = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -57,13 +62,9 @@
             this.EmployeeFNtxtbx = new System.Windows.Forms.TextBox();
             this.Cancelbtn3 = new System.Windows.Forms.Button();
             this.EmployeeSavebtn = new System.Windows.Forms.Button();
-            this.EmployeeSalarytxtbx = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.Countinglbl = new System.Windows.Forms.Label();
             this.Customerpnl.SuspendLayout();
-            this.Deliverpnl.SuspendLayout();
+            this.Supplierpnl.SuspendLayout();
             this.Employerpnl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,30 +83,65 @@
             this.Customerpnl.Size = new System.Drawing.Size(586, 160);
             this.Customerpnl.TabIndex = 1;
             // 
-            // Deliverpnl
+            // label4
             // 
-            this.Deliverpnl.Controls.Add(this.label12);
-            this.Deliverpnl.Controls.Add(this.label11);
-            this.Deliverpnl.Controls.Add(this.label5);
-            this.Deliverpnl.Controls.Add(this.DeliveryTeltxtbx);
-            this.Deliverpnl.Controls.Add(this.DeliveryComptxtbx);
-            this.Deliverpnl.Controls.Add(this.DeliveryComtxtbx);
-            this.Deliverpnl.Controls.Add(this.DeliverySavebtn);
-            this.Deliverpnl.Controls.Add(this.Cancelbtn2);
-            this.Deliverpnl.Location = new System.Drawing.Point(371, 281);
-            this.Deliverpnl.Name = "Deliverpnl";
-            this.Deliverpnl.Size = new System.Drawing.Size(246, 227);
-            this.Deliverpnl.TabIndex = 2;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 69);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 20);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Telephone nr.";
             // 
-            // Personallstbx
+            // label3
             // 
-            this.Personallstbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Personallstbx.FormattingEnabled = true;
-            this.Personallstbx.ItemHeight = 16;
-            this.Personallstbx.Location = new System.Drawing.Point(31, 284);
-            this.Personallstbx.Name = "Personallstbx";
-            this.Personallstbx.Size = new System.Drawing.Size(321, 212);
-            this.Personallstbx.TabIndex = 3;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(29, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 20);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Lastname";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(29, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Firstname";
+            // 
+            // CustomerLNtxtbx
+            // 
+            this.CustomerLNtxtbx.Location = new System.Drawing.Point(115, 43);
+            this.CustomerLNtxtbx.Name = "CustomerLNtxtbx";
+            this.CustomerLNtxtbx.Size = new System.Drawing.Size(126, 20);
+            this.CustomerLNtxtbx.TabIndex = 4;
+            // 
+            // CustomerTeltxtbx
+            // 
+            this.CustomerTeltxtbx.Location = new System.Drawing.Point(115, 69);
+            this.CustomerTeltxtbx.Name = "CustomerTeltxtbx";
+            this.CustomerTeltxtbx.Size = new System.Drawing.Size(126, 20);
+            this.CustomerTeltxtbx.TabIndex = 3;
+            // 
+            // CustomerFNtxtbx
+            // 
+            this.CustomerFNtxtbx.Location = new System.Drawing.Point(115, 17);
+            this.CustomerFNtxtbx.Name = "CustomerFNtxtbx";
+            this.CustomerFNtxtbx.Size = new System.Drawing.Size(126, 20);
+            this.CustomerFNtxtbx.TabIndex = 2;
+            // 
+            // Cancelbtn1
+            // 
+            this.Cancelbtn1.Location = new System.Drawing.Point(410, 106);
+            this.Cancelbtn1.Name = "Cancelbtn1";
+            this.Cancelbtn1.Size = new System.Drawing.Size(55, 41);
+            this.Cancelbtn1.TabIndex = 1;
+            this.Cancelbtn1.Text = "Cancel";
+            this.Cancelbtn1.UseVisualStyleBackColor = true;
             // 
             // CustomerSavebtn
             // 
@@ -117,14 +153,81 @@
             this.CustomerSavebtn.UseVisualStyleBackColor = true;
             this.CustomerSavebtn.Click += new System.EventHandler(this.CustomerSavebtn_Click);
             // 
-            // Cancelbtn1
+            // Supplierpnl
             // 
-            this.Cancelbtn1.Location = new System.Drawing.Point(410, 106);
-            this.Cancelbtn1.Name = "Cancelbtn1";
-            this.Cancelbtn1.Size = new System.Drawing.Size(55, 41);
-            this.Cancelbtn1.TabIndex = 1;
-            this.Cancelbtn1.Text = "Cancel";
-            this.Cancelbtn1.UseVisualStyleBackColor = true;
+            this.Supplierpnl.Controls.Add(this.label12);
+            this.Supplierpnl.Controls.Add(this.label11);
+            this.Supplierpnl.Controls.Add(this.label5);
+            this.Supplierpnl.Controls.Add(this.SupplierTeltxtbx);
+            this.Supplierpnl.Controls.Add(this.SupplierComptxtbx);
+            this.Supplierpnl.Controls.Add(this.SupplierComtxtbx);
+            this.Supplierpnl.Controls.Add(this.SupplierSavebtn);
+            this.Supplierpnl.Controls.Add(this.Cancelbtn2);
+            this.Supplierpnl.Location = new System.Drawing.Point(371, 281);
+            this.Supplierpnl.Name = "Supplierpnl";
+            this.Supplierpnl.Size = new System.Drawing.Size(246, 227);
+            this.Supplierpnl.TabIndex = 2;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(27, 66);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(106, 20);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Telephone nr.";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(57, 40);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(76, 20);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Company";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(68, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 20);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Contact";
+            // 
+            // SupplierTeltxtbx
+            // 
+            this.SupplierTeltxtbx.Location = new System.Drawing.Point(139, 66);
+            this.SupplierTeltxtbx.Name = "SupplierTeltxtbx";
+            this.SupplierTeltxtbx.Size = new System.Drawing.Size(100, 20);
+            this.SupplierTeltxtbx.TabIndex = 8;
+            // 
+            // SupplierComptxtbx
+            // 
+            this.SupplierComptxtbx.Location = new System.Drawing.Point(139, 40);
+            this.SupplierComptxtbx.Name = "SupplierComptxtbx";
+            this.SupplierComptxtbx.Size = new System.Drawing.Size(100, 20);
+            this.SupplierComptxtbx.TabIndex = 7;
+            // 
+            // SupplierComtxtbx
+            // 
+            this.SupplierComtxtbx.Location = new System.Drawing.Point(139, 14);
+            this.SupplierComtxtbx.Name = "SupplierComtxtbx";
+            this.SupplierComtxtbx.Size = new System.Drawing.Size(100, 20);
+            this.SupplierComtxtbx.TabIndex = 6;
+            // 
+            // SupplierSavebtn
+            // 
+            this.SupplierSavebtn.Location = new System.Drawing.Point(63, 167);
+            this.SupplierSavebtn.Name = "SupplierSavebtn";
+            this.SupplierSavebtn.Size = new System.Drawing.Size(55, 41);
+            this.SupplierSavebtn.TabIndex = 2;
+            this.SupplierSavebtn.Text = "Save";
+            this.SupplierSavebtn.UseVisualStyleBackColor = true;
+            this.SupplierSavebtn.Click += new System.EventHandler(this.SupplierSavebtn_Click);
             // 
             // Cancelbtn2
             // 
@@ -135,15 +238,16 @@
             this.Cancelbtn2.Text = "Cancel";
             this.Cancelbtn2.UseVisualStyleBackColor = true;
             // 
-            // DeliverySavebtn
+            // Personallstbx
             // 
-            this.DeliverySavebtn.Location = new System.Drawing.Point(63, 167);
-            this.DeliverySavebtn.Name = "DeliverySavebtn";
-            this.DeliverySavebtn.Size = new System.Drawing.Size(55, 41);
-            this.DeliverySavebtn.TabIndex = 2;
-            this.DeliverySavebtn.Text = "Save";
-            this.DeliverySavebtn.UseVisualStyleBackColor = true;
-            this.DeliverySavebtn.Click += new System.EventHandler(this.DeliverySavebtn_Click);
+            this.Personallstbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Personallstbx.FormattingEnabled = true;
+            this.Personallstbx.ItemHeight = 16;
+            this.Personallstbx.Location = new System.Drawing.Point(31, 284);
+            this.Personallstbx.Name = "Personallstbx";
+            this.Personallstbx.Size = new System.Drawing.Size(321, 212);
+            this.Personallstbx.TabIndex = 3;
+            this.Personallstbx.SelectedIndexChanged += new System.EventHandler(this.Personallstbx_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -164,78 +268,6 @@
             this.Categorycombx.TabIndex = 5;
             this.Categorycombx.SelectedIndexChanged += new System.EventHandler(this.Categorycombx_SelectedIndexChanged);
             // 
-            // CustomerFNtxtbx
-            // 
-            this.CustomerFNtxtbx.Location = new System.Drawing.Point(115, 17);
-            this.CustomerFNtxtbx.Name = "CustomerFNtxtbx";
-            this.CustomerFNtxtbx.Size = new System.Drawing.Size(126, 20);
-            this.CustomerFNtxtbx.TabIndex = 2;
-            // 
-            // CustomerTeltxtbx
-            // 
-            this.CustomerTeltxtbx.Location = new System.Drawing.Point(115, 69);
-            this.CustomerTeltxtbx.Name = "CustomerTeltxtbx";
-            this.CustomerTeltxtbx.Size = new System.Drawing.Size(126, 20);
-            this.CustomerTeltxtbx.TabIndex = 3;
-            // 
-            // CustomerLNtxtbx
-            // 
-            this.CustomerLNtxtbx.Location = new System.Drawing.Point(115, 43);
-            this.CustomerLNtxtbx.Name = "CustomerLNtxtbx";
-            this.CustomerLNtxtbx.Size = new System.Drawing.Size(126, 20);
-            this.CustomerLNtxtbx.TabIndex = 4;
-            // 
-            // DeliveryComtxtbx
-            // 
-            this.DeliveryComtxtbx.Location = new System.Drawing.Point(139, 14);
-            this.DeliveryComtxtbx.Name = "DeliveryComtxtbx";
-            this.DeliveryComtxtbx.Size = new System.Drawing.Size(100, 20);
-            this.DeliveryComtxtbx.TabIndex = 6;
-            // 
-            // DeliveryComptxtbx
-            // 
-            this.DeliveryComptxtbx.Location = new System.Drawing.Point(139, 40);
-            this.DeliveryComptxtbx.Name = "DeliveryComptxtbx";
-            this.DeliveryComptxtbx.Size = new System.Drawing.Size(100, 20);
-            this.DeliveryComptxtbx.TabIndex = 7;
-            // 
-            // DeliveryTeltxtbx
-            // 
-            this.DeliveryTeltxtbx.Location = new System.Drawing.Point(139, 66);
-            this.DeliveryTeltxtbx.Name = "DeliveryTeltxtbx";
-            this.DeliveryTeltxtbx.Size = new System.Drawing.Size(100, 20);
-            this.DeliveryTeltxtbx.TabIndex = 8;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(29, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Firstname";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(29, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 20);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Lastname";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 69);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 20);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Telephone nr.";
-            // 
             // Employerpnl
             // 
             this.Employerpnl.Controls.Add(this.label10);
@@ -254,6 +286,23 @@
             this.Employerpnl.Name = "Employerpnl";
             this.Employerpnl.Size = new System.Drawing.Size(586, 160);
             this.Employerpnl.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(312, 45);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(53, 20);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Salary";
+            // 
+            // EmployeeSalarytxtbx
+            // 
+            this.EmployeeSalarytxtbx.Location = new System.Drawing.Point(371, 45);
+            this.EmployeeSalarytxtbx.Name = "EmployeeSalarytxtbx";
+            this.EmployeeSalarytxtbx.Size = new System.Drawing.Size(126, 20);
+            this.EmployeeSalarytxtbx.TabIndex = 10;
             // 
             // label6
             // 
@@ -342,70 +391,33 @@
             this.EmployeeSavebtn.UseVisualStyleBackColor = true;
             this.EmployeeSavebtn.Click += new System.EventHandler(this.EmployeeSavebtn_Click);
             // 
-            // EmployeeSalarytxtbx
+            // Countinglbl
             // 
-            this.EmployeeSalarytxtbx.Location = new System.Drawing.Point(371, 45);
-            this.EmployeeSalarytxtbx.Name = "EmployeeSalarytxtbx";
-            this.EmployeeSalarytxtbx.Size = new System.Drawing.Size(126, 20);
-            this.EmployeeSalarytxtbx.TabIndex = 10;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(312, 45);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 20);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Salary";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(68, 14);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 20);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Contact";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(57, 40);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 20);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "Company";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(27, 66);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(106, 20);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "Telephone nr.";
+            this.Countinglbl.AutoSize = true;
+            this.Countinglbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Countinglbl.Location = new System.Drawing.Point(28, 261);
+            this.Countinglbl.Name = "Countinglbl";
+            this.Countinglbl.Size = new System.Drawing.Size(0, 20);
+            this.Countinglbl.TabIndex = 11;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(648, 534);
+            this.Controls.Add(this.Countinglbl);
             this.Controls.Add(this.Categorycombx);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Personallstbx);
-            this.Controls.Add(this.Deliverpnl);
+            this.Controls.Add(this.Supplierpnl);
             this.Controls.Add(this.Customerpnl);
             this.Controls.Add(this.Employerpnl);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Customerpnl.ResumeLayout(false);
             this.Customerpnl.PerformLayout();
-            this.Deliverpnl.ResumeLayout(false);
-            this.Deliverpnl.PerformLayout();
+            this.Supplierpnl.ResumeLayout(false);
+            this.Supplierpnl.PerformLayout();
             this.Employerpnl.ResumeLayout(false);
             this.Employerpnl.PerformLayout();
             this.ResumeLayout(false);
@@ -415,10 +427,10 @@
 
         #endregion
         private System.Windows.Forms.Panel Customerpnl;
-        private System.Windows.Forms.Panel Deliverpnl;
+        private System.Windows.Forms.Panel Supplierpnl;
         private System.Windows.Forms.Button Cancelbtn1;
         private System.Windows.Forms.Button CustomerSavebtn;
-        private System.Windows.Forms.Button DeliverySavebtn;
+        private System.Windows.Forms.Button SupplierSavebtn;
         private System.Windows.Forms.Button Cancelbtn2;
         private System.Windows.Forms.ListBox Personallstbx;
         private System.Windows.Forms.Label label1;
@@ -429,9 +441,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox DeliveryTeltxtbx;
-        private System.Windows.Forms.TextBox DeliveryComptxtbx;
-        private System.Windows.Forms.TextBox DeliveryComtxtbx;
+        private System.Windows.Forms.TextBox SupplierTeltxtbx;
+        private System.Windows.Forms.TextBox SupplierComptxtbx;
+        private System.Windows.Forms.TextBox SupplierComtxtbx;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label5;
@@ -448,6 +460,7 @@
         private System.Windows.Forms.TextBox EmployeeFNtxtbx;
         private System.Windows.Forms.Button Cancelbtn3;
         private System.Windows.Forms.Button EmployeeSavebtn;
+        private System.Windows.Forms.Label Countinglbl;
     }
 }
 

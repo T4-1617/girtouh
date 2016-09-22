@@ -21,7 +21,17 @@ namespace WinUpp_210916
         public override string ToString()
 
         {
-            return string.Format("{0} {1} {2} - Tel.Number: {3}. Salary:{4}", EmployeeFirstName, EmployeeLastName, EmployeeTel, EmployeeSalary);
+            return string.Format("{0} {1} {2} - Tel.Number: {3}. Salary: {4}",EmployeeTitle, EmployeeFirstName, EmployeeLastName, EmployeeTel, EmployeeSalary);
+
+        }
+
+        public Employee()
+        {
+            EmployeeFirstName = string.Empty;
+            EmployeeLastName = string.Empty;
+            EmployeeTel = string.Empty;
+            EmployeeTitle = string.Empty;
+            EmployeeSalary = string.Empty;
 
         }
 

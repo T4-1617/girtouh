@@ -24,8 +24,16 @@ namespace WinUpp_210916
         public override string ToString()
 
         {
-            return string.Format("{0} {1} Tel.Number: {2}. CustomerNumber:{3}", CustomerFirstName, CustomerLastName, CustomerTel, CustomerIDNumber);
+            return string.Format("{0} {1} - Tel.Number: {2}. CustomerNumber: {3}", CustomerFirstName, CustomerLastName, CustomerTel, CustomerIDNumber);
         }
 
+        public Customer()
+        {
+            CustomerFirstName = string.Empty;
+            CustomerLastName = string.Empty;
+            CustomerTel = string.Empty;
+            CustomerIDNumber = string.Empty;
+
+        }
     }
 }

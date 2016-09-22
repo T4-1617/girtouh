@@ -12,6 +12,7 @@ namespace WinUpp_160916
 {
     public partial class Form1 : Form
     {
+        System.Collections.ArrayList CustomersAndCars;
         System.Collections.ArrayList Cars;
         int CarinList = new int();
 
@@ -22,6 +23,7 @@ namespace WinUpp_160916
 
             //Adding Cars arraylist
             Cars = new System.Collections.ArrayList();
+            CustomersAndCars = new System.Collections.ArrayList();
 
 
             Car c = new Car();
@@ -166,17 +168,19 @@ namespace WinUpp_160916
 
         private void Infobtn_Click(object sender, EventArgs e)
         {
-            if (Avaiblecarlst.SelectedIndex > -1)
+            
+
+            if (Avaiblecarlst.SelectedIndex < -1)
+            {
+                Responselbl2.Text = "No car selected.";
+                Responselbl.Text = "Please select a car to view.";
+            }
+
+            else
+
             {
                 Car car = (Car)Carreturnlst.SelectedItem;
                 MessageBox.Show(string.Format("{0} Booked by {1}", car, car.hiredBy));
-            }
-            else
-            {
-
-                Responselbl2.Text = "No car selected.";
-                Responselbl.Text = "Please select a car to view.";
-
             }
         }
 

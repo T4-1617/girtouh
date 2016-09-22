@@ -16,17 +16,24 @@ namespace WinUpp_210916
         System.Collections.ArrayList Category;
         System.Collections.ArrayList Employees;
         System.Collections.ArrayList Customers;
-        System.Collections.ArrayList Delivery;
-
+        System.Collections.ArrayList Supplier;
+        int Customercounter = 0;
+        int Employeecounter = 0;
+        int Suppliercounter = 0;
 
 
         public Form1()
         {
             InitializeComponent();
+
+            //Setting up ArrayLists for backing store
+            Customers = new System.Collections.ArrayList();
+            Employees = new System.Collections.ArrayList();
+            Supplier = new System.Collections.ArrayList();
+
+
             //Seeting starting screen to neutral
-            Deliverpnl.Visible = false;
-            Customerpnl.Visible = false;
-            Employerpnl.Visible = false;
+            ClearScreen();
 
 
             //Combolist objects
@@ -42,7 +49,7 @@ namespace WinUpp_210916
             Category.Add(c);
 
             Categories d = new Categories();
-            d.Categorytype = "Delivery";
+            d.Categorytype = "Supplier";
             Category.Add(d);
 
             //Adding objects to the combolist
@@ -60,21 +67,18 @@ namespace WinUpp_210916
             switch (Categorycombx.SelectedIndex)
             {
                 case 0:
-                    Employerpnl.Visible = true;
-                    Deliverpnl.Visible = false;
-                    Customerpnl.Visible = false;
+                    ShowPanels(false, true, false);
+                    //Employerpnl.Visible = true;
+                    //Supplypnl.Visible = false;
+                    //Customerpnl.Visible = false;
                     break;
 
                 case 1:
-                    Customerpnl.Visible = true;
-                    Deliverpnl.Visible = false;
-                    Employerpnl.Visible = false;
+                    ShowPanels(true, false, false);
                     break;
 
                 case 2:
-                    Deliverpnl.Visible = true;
-                    Customerpnl.Visible = false;
-                    Employerpnl.Visible = false;
+                    ShowPanels(false, false, true);
                     break;
             }
         }
@@ -85,7 +89,6 @@ namespace WinUpp_210916
             //Adding to costumer list
             Random i = new Random();
             int IDNumber = i.Next(0, 300);
-            Customers = new System.Collections.ArrayList();
             Customer c = new Customer();
             c.CustomerIDNumber = IDNumber.ToString();
             c.CustomerFirstName = CustomerFNtxtbx.Text;
@@ -95,14 +98,14 @@ namespace WinUpp_210916
             Customers.Add(c);
 
             //Hiding all panels, setting screen to neutral
-            Deliverpnl.Visible = false;
-            Customerpnl.Visible = false;
-            Employerpnl.Visible = false;
+            ClearScreen();
 
             //Clearing textboxes
             CustomerFNtxtbx.Text = string.Empty;
             CustomerLNtxtbx.Text = string.Empty;
             CustomerTeltxtbx.Text = string.Empty;
+
+            Customercounter++;
 
             UpdateHumanoidlist();
 
@@ -113,7 +116,6 @@ namespace WinUpp_210916
         {
 
             //Adding to employee list
-            Employees = new System.Collections.ArrayList();
             Employee f = new Employee();
             f.EmployeeFirstName = EmployeeFNtxtbx.Text;
             f.EmployeeLastName = EmployeeLNtxtbx.Text;
@@ -122,10 +124,9 @@ namespace WinUpp_210916
             f.EmployeeSalary = EmployeeSalarytxtbx.Text;
             Employees.Add(f);
 
+
             //Hiding all panels, setting screen to neutral
-            Deliverpnl.Visible = false;
-            Customerpnl.Visible = false;
-            Employerpnl.Visible = false;
+            ClearScreen();
 
             //Clearing textboxes
             EmployeeFNtxtbx.Text = string.Empty;
@@ -134,86 +135,115 @@ namespace WinUpp_210916
             EmployeeTitletxtbx.Text = string.Empty;
             EmployeeSalarytxtbx.Text = string.Empty;
 
+            Employeecounter++;
+
             UpdateHumanoidlist();
 
         }
 
-        //Delivery save button function
-        private void DeliverySavebtn_Click(object sender, EventArgs e)
+        //Supplier save button function
+        private void SupplierSavebtn_Click(object sender, EventArgs e)
         {
 
-            //Adding to delivery list
-            Delivery = new System.Collections.ArrayList();
-            Deliver d = new Deliver();
-            d.DeliveryContact = DeliveryComtxtbx.Text;
-            d.DeliveryCompany = DeliveryComptxtbx.Text;
-            d.DeliveryTel = DeliveryTeltxtbx.Text;
-            Delivery.Add(d);
+            //Adding to Supplier list
+            Supply d = new Supply();
+            d.SupplierContact = SupplierComtxtbx.Text;
+            d.SupplierCompany = SupplierComptxtbx.Text;
+            d.SupplierTel = SupplierTeltxtbx.Text;
+            Supplier.Add(d);
 
             //Hiding all panels, setting screen to neutral
-            Deliverpnl.Visible = false;
-            Customerpnl.Visible = false;
-            Employerpnl.Visible = false;
+            ClearScreen();
 
             //Clearing textboxes
-            DeliveryComtxtbx.Text = string.Empty;
-            DeliveryComptxtbx.Text = string.Empty;
-            DeliveryTeltxtbx.Text = string.Empty;
+            SupplierComtxtbx.Text = string.Empty;
+            SupplierComptxtbx.Text = string.Empty;
+            SupplierTeltxtbx.Text = string.Empty;
+
+            Suppliercounter++;
 
             UpdateHumanoidlist();
 
         }
 
-        public void UpdateHumanoidlist()
+        //Chosing an object in Personallistbox
+        private void Personallstbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Personallstbx.Items.Clear();
 
-            if (Customers.Count == 0)
+
+            if (Personallstbx.SelectedItem == null)
             {
-                Personallstbx.Items.Add("No customers");
+
             }
 
-            if (Employees.Count == 0)
+            else
             {
-                Personallstbx.Items.Add("No employees");
-            }
+                MessageBox.Show(string.Format("{0}", Personallstbx.SelectedItem));
 
-            if (Delivery.Count == 0)
-            {
-                Personallstbx.Items.Add("No deliveries");
-            }
-
-
-            if (Customers.Count > 0)
-            {
-            
-                foreach (Customer j in Customers)
-                {
-                    Personallstbx.Items.Add(j);
-
-                }
-            }
-
-            if (Employees.Count > 0)
-            {
-                foreach (Employee t in Employees)
-                {
-                    Personallstbx.Items.Add(t);
-
-                }
-            }
-
-            if (Delivery.Count > 0)
-            {
-                foreach (Deliver h in Delivery)
-                {
-                    Personallstbx.Items.Add(h);
-
-                }
-
+                Personallstbx.SelectedItem = null;
             }
 
         }
+
+        //Update Listbox
+        public void UpdateHumanoidlist()
+        {
+
+            if (Personallstbx != null)
+            {
+                Personallstbx.Items.Clear();
+            }
+
+
+
+            Personallstbx.Items.Add("Customers:");
+
+            foreach (Customer j in Customers)
+            {
+                Personallstbx.Items.Add(j);
+
+            }
+
+
+
+            Personallstbx.Items.Add("Employees:");
+
+            foreach (Employee t in Employees)
+            {
+                Personallstbx.Items.Add(t);
+
+            }
+
+
+
+            Personallstbx.Items.Add("Suppliers:");
+
+            foreach (Supply h in Supplier)
+            {
+                Personallstbx.Items.Add(h);
+
+            }
+
+            Countinglbl.Text=string.Format("There are {0} Customers, {1} Employees, and {2} Suppliers registered.", Customercounter, Employeecounter,Suppliercounter);
+
+        }
+
+        //Showing panels
+        public void ShowPanels(bool ShowCustomerPanel, bool ShowEmployeePanel, bool ShowSupplierPanel)
+        {
+            Employerpnl.Visible = ShowEmployeePanel;
+            Supplierpnl.Visible = ShowSupplierPanel;
+            Customerpnl.Visible = ShowCustomerPanel;
+        }
+
+        //Setting screen to neutral
+        public void ClearScreen()
+        {
+            Supplierpnl.Visible = false;
+            Customerpnl.Visible = false;
+            Employerpnl.Visible = false;
+        }
+
 
     }
 }
