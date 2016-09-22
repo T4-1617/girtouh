@@ -68,9 +68,6 @@ namespace WinUpp_210916
             {
                 case 0:
                     ShowPanels(false, true, false);
-                    //Employerpnl.Visible = true;
-                    //Supplypnl.Visible = false;
-                    //Customerpnl.Visible = false;
                     break;
 
                 case 1:
@@ -94,7 +91,6 @@ namespace WinUpp_210916
             c.CustomerFirstName = CustomerFNtxtbx.Text;
             c.CustomerLastName = CustomerLNtxtbx.Text;
             c.CustomerTel = CustomerTeltxtbx.Text;
-
             Customers.Add(c);
 
             //Hiding all panels, setting screen to neutral
@@ -105,8 +101,10 @@ namespace WinUpp_210916
             CustomerLNtxtbx.Text = string.Empty;
             CustomerTeltxtbx.Text = string.Empty;
 
+            //Counting customer items
             Customercounter++;
 
+            //Updating listbox
             UpdateHumanoidlist();
 
         }
@@ -135,8 +133,10 @@ namespace WinUpp_210916
             EmployeeTitletxtbx.Text = string.Empty;
             EmployeeSalarytxtbx.Text = string.Empty;
 
+            //Counting employee items
             Employeecounter++;
 
+            //Updating listbox
             UpdateHumanoidlist();
 
         }
@@ -160,8 +160,10 @@ namespace WinUpp_210916
             SupplierComptxtbx.Text = string.Empty;
             SupplierTeltxtbx.Text = string.Empty;
 
+            //Counting supply items
             Suppliercounter++;
 
+            //Updating listbox
             UpdateHumanoidlist();
 
         }
@@ -170,12 +172,13 @@ namespace WinUpp_210916
         private void Personallstbx_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-
+            //Safety if nothing is selected
             if (Personallstbx.SelectedItem == null)
             {
 
             }
 
+            //Shows clear information of currently selected item in list
             else
             {
                 MessageBox.Show(string.Format("{0}", Personallstbx.SelectedItem));
@@ -189,13 +192,14 @@ namespace WinUpp_210916
         public void UpdateHumanoidlist()
         {
 
+            //Clears the listbox from everything
             if (Personallstbx != null)
             {
                 Personallstbx.Items.Clear();
             }
 
 
-
+            //Adding customer objects to list
             Personallstbx.Items.Add("Customers:");
 
             foreach (Customer j in Customers)
@@ -205,7 +209,7 @@ namespace WinUpp_210916
             }
 
 
-
+            //Adding employee objects to list
             Personallstbx.Items.Add("Employees:");
 
             foreach (Employee t in Employees)
@@ -215,7 +219,7 @@ namespace WinUpp_210916
             }
 
 
-
+            //Adding supply objects to list
             Personallstbx.Items.Add("Suppliers:");
 
             foreach (Supply h in Supplier)
@@ -223,7 +227,7 @@ namespace WinUpp_210916
                 Personallstbx.Items.Add(h);
 
             }
-
+            //Writing out amount of people in list
             Countinglbl.Text=string.Format("There are {0} Customers, {1} Employees, and {2} Suppliers registered.", Customercounter, Employeecounter,Suppliercounter);
 
         }
