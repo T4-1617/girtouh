@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.OpenAccountbtn = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.CustomerOrEmployeecombx = new System.Windows.Forms.ComboBox();
             this.button6 = new System.Windows.Forms.Button();
@@ -47,6 +46,7 @@
             this.AddFundsBtn = new System.Windows.Forms.Button();
             this.AddAccount = new System.Windows.Forms.Button();
             this.AddAccountpnl = new System.Windows.Forms.Panel();
+            this.AddAccountConfbtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.Accountnametxt = new System.Windows.Forms.TextBox();
             this.AddCustomerpnl = new System.Windows.Forms.Panel();
@@ -55,21 +55,13 @@
             this.AddCustomerConfirmbtn = new System.Windows.Forms.Button();
             this.CustomerLastNametxt = new System.Windows.Forms.TextBox();
             this.CustomerFirstNametxt = new System.Windows.Forms.TextBox();
-            this.AddAccountConfbtn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.InitialDeposittxt = new System.Windows.Forms.TextBox();
             this.Employeepnl.SuspendLayout();
             this.Customerpnl.SuspendLayout();
             this.AddAccountpnl.SuspendLayout();
             this.AddCustomerpnl.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // OpenAccountbtn
-            // 
-            this.OpenAccountbtn.Location = new System.Drawing.Point(14, 31);
-            this.OpenAccountbtn.Name = "OpenAccountbtn";
-            this.OpenAccountbtn.Size = new System.Drawing.Size(66, 60);
-            this.OpenAccountbtn.TabIndex = 0;
-            this.OpenAccountbtn.Text = "Open Account";
-            this.OpenAccountbtn.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -115,6 +107,7 @@
             this.Customercombx.Name = "Customercombx";
             this.Customercombx.Size = new System.Drawing.Size(201, 21);
             this.Customercombx.TabIndex = 9;
+            this.Customercombx.SelectedIndexChanged += new System.EventHandler(this.Customercombx_SelectedIndexChanged);
             // 
             // Accountcombx
             // 
@@ -123,6 +116,7 @@
             this.Accountcombx.Name = "Accountcombx";
             this.Accountcombx.Size = new System.Drawing.Size(201, 21);
             this.Accountcombx.TabIndex = 10;
+            this.Accountcombx.SelectedIndexChanged += new System.EventHandler(this.Accountcombx_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -185,7 +179,6 @@
             this.Customerpnl.Controls.Add(this.WithdrawFundsBtn);
             this.Customerpnl.Controls.Add(this.AddFundsBtn);
             this.Customerpnl.Controls.Add(this.AddAccount);
-            this.Customerpnl.Controls.Add(this.OpenAccountbtn);
             this.Customerpnl.Controls.Add(this.label2);
             this.Customerpnl.Controls.Add(this.label1);
             this.Customerpnl.Controls.Add(this.Accountcombx);
@@ -198,7 +191,7 @@
             // 
             // ViewFudnsBtn
             // 
-            this.ViewFudnsBtn.Location = new System.Drawing.Point(230, 31);
+            this.ViewFudnsBtn.Location = new System.Drawing.Point(170, 33);
             this.ViewFudnsBtn.Name = "ViewFudnsBtn";
             this.ViewFudnsBtn.Size = new System.Drawing.Size(66, 60);
             this.ViewFudnsBtn.TabIndex = 20;
@@ -207,7 +200,7 @@
             // 
             // WithdrawFundsBtn
             // 
-            this.WithdrawFundsBtn.Location = new System.Drawing.Point(158, 31);
+            this.WithdrawFundsBtn.Location = new System.Drawing.Point(98, 33);
             this.WithdrawFundsBtn.Name = "WithdrawFundsBtn";
             this.WithdrawFundsBtn.Size = new System.Drawing.Size(66, 60);
             this.WithdrawFundsBtn.TabIndex = 19;
@@ -216,7 +209,7 @@
             // 
             // AddFundsBtn
             // 
-            this.AddFundsBtn.Location = new System.Drawing.Point(86, 31);
+            this.AddFundsBtn.Location = new System.Drawing.Point(26, 33);
             this.AddFundsBtn.Name = "AddFundsBtn";
             this.AddFundsBtn.Size = new System.Drawing.Size(66, 60);
             this.AddFundsBtn.TabIndex = 18;
@@ -235,6 +228,8 @@
             // 
             // AddAccountpnl
             // 
+            this.AddAccountpnl.Controls.Add(this.InitialDeposittxt);
+            this.AddAccountpnl.Controls.Add(this.label6);
             this.AddAccountpnl.Controls.Add(this.AddAccountConfbtn);
             this.AddAccountpnl.Controls.Add(this.label5);
             this.AddAccountpnl.Controls.Add(this.Accountnametxt);
@@ -243,11 +238,21 @@
             this.AddAccountpnl.Size = new System.Drawing.Size(344, 192);
             this.AddAccountpnl.TabIndex = 15;
             // 
+            // AddAccountConfbtn
+            // 
+            this.AddAccountConfbtn.Location = new System.Drawing.Point(29, 132);
+            this.AddAccountConfbtn.Name = "AddAccountConfbtn";
+            this.AddAccountConfbtn.Size = new System.Drawing.Size(75, 23);
+            this.AddAccountConfbtn.TabIndex = 5;
+            this.AddAccountConfbtn.Text = "Add Account";
+            this.AddAccountConfbtn.UseVisualStyleBackColor = true;
+            this.AddAccountConfbtn.Click += new System.EventHandler(this.AddAccountConfbtn_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(5, 22);
+            this.label5.Location = new System.Drawing.Point(3, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 16);
             this.label5.TabIndex = 4;
@@ -316,15 +321,22 @@
             this.CustomerFirstNametxt.Size = new System.Drawing.Size(100, 20);
             this.CustomerFirstNametxt.TabIndex = 0;
             // 
-            // AddAccountConfbtn
+            // label6
             // 
-            this.AddAccountConfbtn.Location = new System.Drawing.Point(29, 132);
-            this.AddAccountConfbtn.Name = "AddAccountConfbtn";
-            this.AddAccountConfbtn.Size = new System.Drawing.Size(75, 23);
-            this.AddAccountConfbtn.TabIndex = 5;
-            this.AddAccountConfbtn.Text = "button1";
-            this.AddAccountConfbtn.UseVisualStyleBackColor = true;
-            this.AddAccountConfbtn.Click += new System.EventHandler(this.AddAccountConfbtn_Click);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(11, 45);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 16);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Initial Deposit";
+            // 
+            // InitialDeposittxt
+            // 
+            this.InitialDeposittxt.Location = new System.Drawing.Point(105, 45);
+            this.InitialDeposittxt.Name = "InitialDeposittxt";
+            this.InitialDeposittxt.Size = new System.Drawing.Size(100, 20);
+            this.InitialDeposittxt.TabIndex = 7;
             // 
             // Form1
             // 
@@ -350,8 +362,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button OpenAccountbtn;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ComboBox CustomerOrEmployeecombx;
         private System.Windows.Forms.Button button6;
@@ -379,6 +389,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button AddAccountConfbtn;
+        private System.Windows.Forms.TextBox InitialDeposittxt;
+        private System.Windows.Forms.Label label6;
     }
 }
 

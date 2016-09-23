@@ -41,9 +41,15 @@ namespace WinUpp_220916
                 CustomerOrEmployeecombx.Items.Add(item);
             }
 
-            AddCustomerpnl.Visible = false;
+            Accountcombx.Visible = false;
+            label2.Visible = false;
+            AddAccount.Visible = false;
+            AddFundsBtn.Visible = false;
+            ViewFudnsBtn.Visible = false;
+            WithdrawFundsBtn.Visible = false;
 
-            UpdatePanels(false, false, false);
+
+            UpdatePanels(false, false, false,false);
 
 
         }
@@ -53,11 +59,11 @@ namespace WinUpp_220916
             switch (CustomerOrEmployeecombx.SelectedIndex)
             {
                 case 0:
-                    UpdatePanels(true, false, false);
+                    UpdatePanels(true, false, false,false);
                     break;
 
                 case 1:
-                    UpdatePanels(false, true, false);
+                    UpdatePanels(false, true, false,false);
                     break;
 
             }
@@ -80,6 +86,18 @@ namespace WinUpp_220916
 
             Customercombx.Items.Add(g);
 
+            UpdatePanels(true, false, false,false);
+
+            ClearBoxes();
+
+        }
+
+        private void Customercombx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Accountcombx.Visible = true;
+            label2.Visible = true;
+            AddAccount.Visible = true;
+
         }
 
         private void AddAccount_Click(object sender, EventArgs e)
@@ -94,14 +112,17 @@ namespace WinUpp_220916
             CustomerAccount.Add(u);
 
             Accountcombx.Items.Add(u);
-            UpdatePanels(true, false, false);
+            UpdatePanels(true, false, false,false);
+
+            ClearBoxes();
         }
 
-        public void UpdatePanels(bool ShowCustomerPanel, bool ShowEmployeePanel, bool ShowAddAccountPanel)
+        public void UpdatePanels(bool ShowCustomerPanel, bool ShowEmployeePanel, bool ShowAddAccountPanel, bool ShowAddCustomerPanel)
         {
             Customerpnl.Visible = ShowCustomerPanel;
             Employeepnl.Visible = ShowEmployeePanel;
             AddAccountpnl.Visible = ShowAddAccountPanel;
+            AddCustomerpnl.Visible = ShowAddCustomerPanel;
 
         }
 
@@ -112,5 +133,12 @@ namespace WinUpp_220916
             Accountnametxt.Text = string.Empty;
         }
 
+        private void Accountcombx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AddFundsBtn.Visible = true;
+            WithdrawFundsBtn.Visible = true;
+            ViewFudnsBtn.Visible = true;
+
+        }
     }
 }
