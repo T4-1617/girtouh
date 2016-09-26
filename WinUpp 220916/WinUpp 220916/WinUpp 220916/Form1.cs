@@ -46,6 +46,7 @@ namespace WinUpp_220916
             AddAccount.Visible = false;
             AddFundsBtn.Visible = false;
             ViewFudnsBtn.Visible = false;
+            label7.Visible = false;
             WithdrawFundsBtn.Visible = false;
 
 
@@ -107,8 +108,11 @@ namespace WinUpp_220916
         }
         private void AddAccountConfbtn_Click(object sender, EventArgs e)
         {
-            CustomerAccounts u = new CustomerAccounts();
+
+            
+            AccountforCustomer u = new AccountforCustomer(decimal.Parse(InitialDeposittxt.Text));
             u.AccountName = Accountnametxt.Text;
+            //u.FundsforAccount(InitialDeposittxt.Text);
             CustomerAccount.Add(u);
 
             Accountcombx.Items.Add(u);
@@ -131,6 +135,7 @@ namespace WinUpp_220916
             CustomerFirstNametxt.Text = string.Empty;
             CustomerLastNametxt.Text = string.Empty;
             Accountnametxt.Text = string.Empty;
+            InitialDeposittxt.Text = string.Empty;
         }
 
         private void Accountcombx_SelectedIndexChanged(object sender, EventArgs e)
@@ -139,6 +144,12 @@ namespace WinUpp_220916
             WithdrawFundsBtn.Visible = true;
             ViewFudnsBtn.Visible = true;
 
+        }
+
+        private void ViewFudnsBtn_Click(object sender, EventArgs e)
+        {
+            label7.Visible = true;
+            label7.Text = ((AccountforCustomer)CustomerAccount[0]).Balance.ToString();
         }
     }
 }

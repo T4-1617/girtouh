@@ -20,7 +20,17 @@ namespace WinUpp_220916
 
         public string CustomerLastName { get; set; }
 
+        public void FundsforAccount(decimal InitialDeposit)
+        {
+            if (InitialDeposit >=1000)
+            {
+                AccountforCustomer a = new AccountforCustomer(InitialDeposit);
 
+                //a.Deposit(InitialDeposit);
+                CustomerAccounts.Add(a);
+            }
+
+        }
 
         public override string ToString()
         {
@@ -33,6 +43,28 @@ namespace WinUpp_220916
     {
         private decimal balance;
 
+        public string AccountName { get; set; }
+
+        public AccountforCustomer(decimal starting_fund)
+        {
+            balance = starting_fund;
+        }
+
+        public decimal Balance
+        {
+            get { return balance; }
+        }
+
+        public void Withdraw (decimal changedamount)
+        {
+            balance = balance - changedamount;
+        }
+
+        public void Deposit(decimal changedamount)
+        {
+            balance = balance + changedamount;
+
+        }   
 
 
     }

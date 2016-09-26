@@ -46,6 +46,8 @@
             this.AddFundsBtn = new System.Windows.Forms.Button();
             this.AddAccount = new System.Windows.Forms.Button();
             this.AddAccountpnl = new System.Windows.Forms.Panel();
+            this.InitialDeposittxt = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.AddAccountConfbtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.Accountnametxt = new System.Windows.Forms.TextBox();
@@ -55,8 +57,7 @@
             this.AddCustomerConfirmbtn = new System.Windows.Forms.Button();
             this.CustomerLastNametxt = new System.Windows.Forms.TextBox();
             this.CustomerFirstNametxt = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.InitialDeposittxt = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.Employeepnl.SuspendLayout();
             this.Customerpnl.SuspendLayout();
             this.AddAccountpnl.SuspendLayout();
@@ -175,6 +176,7 @@
             // 
             // Customerpnl
             // 
+            this.Customerpnl.Controls.Add(this.label7);
             this.Customerpnl.Controls.Add(this.ViewFudnsBtn);
             this.Customerpnl.Controls.Add(this.WithdrawFundsBtn);
             this.Customerpnl.Controls.Add(this.AddFundsBtn);
@@ -197,6 +199,7 @@
             this.ViewFudnsBtn.TabIndex = 20;
             this.ViewFudnsBtn.Text = "View Funds";
             this.ViewFudnsBtn.UseVisualStyleBackColor = true;
+            this.ViewFudnsBtn.Click += new System.EventHandler(this.ViewFudnsBtn_Click);
             // 
             // WithdrawFundsBtn
             // 
@@ -237,6 +240,23 @@
             this.AddAccountpnl.Name = "AddAccountpnl";
             this.AddAccountpnl.Size = new System.Drawing.Size(344, 192);
             this.AddAccountpnl.TabIndex = 15;
+            // 
+            // InitialDeposittxt
+            // 
+            this.InitialDeposittxt.Location = new System.Drawing.Point(105, 45);
+            this.InitialDeposittxt.Name = "InitialDeposittxt";
+            this.InitialDeposittxt.Size = new System.Drawing.Size(100, 20);
+            this.InitialDeposittxt.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(11, 45);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 16);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Initial Deposit";
             // 
             // AddAccountConfbtn
             // 
@@ -321,22 +341,15 @@
             this.CustomerFirstNametxt.Size = new System.Drawing.Size(100, 20);
             this.CustomerFirstNametxt.TabIndex = 0;
             // 
-            // label6
+            // label7
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(11, 45);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 16);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Initial Deposit";
-            // 
-            // InitialDeposittxt
-            // 
-            this.InitialDeposittxt.Location = new System.Drawing.Point(105, 45);
-            this.InitialDeposittxt.Name = "InitialDeposittxt";
-            this.InitialDeposittxt.Size = new System.Drawing.Size(100, 20);
-            this.InitialDeposittxt.TabIndex = 7;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(242, 33);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 24);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "label7";
             // 
             // Form1
             // 
@@ -391,6 +404,7 @@
         private System.Windows.Forms.Button AddAccountConfbtn;
         private System.Windows.Forms.TextBox InitialDeposittxt;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
 
