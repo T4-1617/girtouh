@@ -8,7 +8,7 @@ namespace WinUpp_220916
 {
     class Customer
     {
-        private System.Collections.ArrayList CustomerAccounts;
+        public System.Collections.ArrayList CustomerAccounts;
 
         public Customer()
         {
@@ -20,17 +20,29 @@ namespace WinUpp_220916
 
         public string CustomerLastName { get; set; }
 
+        public AccountforCustomer GetCustomerAccount(int CustomerAccountIndex)
+        {
+            return (AccountforCustomer)CustomerAccounts[CustomerAccountIndex];
+        }
+
+
+        public System.Collections.ArrayList GetCusomterAccounts()
+        {
+            return CustomerAccounts;
+        }
+
+
         public void FundsforAccount(decimal InitialDeposit)
         {
             if (InitialDeposit >=1000)
             {
                 AccountforCustomer a = new AccountforCustomer(InitialDeposit);
 
-                //a.Deposit(InitialDeposit);
                 CustomerAccounts.Add(a);
             }
 
         }
+        
 
         public override string ToString()
         {
@@ -64,8 +76,11 @@ namespace WinUpp_220916
         {
             balance = balance + changedamount;
 
-        }   
+        }
 
-
+        public override string ToString()
+        {
+            return string.Format("{0}",AccountName);
+        }
     }
 }

@@ -28,24 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button5 = new System.Windows.Forms.Button();
             this.CustomerOrEmployeecombx = new System.Windows.Forms.ComboBox();
-            this.button6 = new System.Windows.Forms.Button();
             this.AddCustomerbtn = new System.Windows.Forms.Button();
             this.Customercombx = new System.Windows.Forms.ComboBox();
             this.Accountcombx = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Employeepnl = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.Customerlstbx = new System.Windows.Forms.ListBox();
+            this.Employeecombx = new System.Windows.Forms.ComboBox();
             this.Customerpnl = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
             this.ViewFudnsBtn = new System.Windows.Forms.Button();
             this.WithdrawFundsBtn = new System.Windows.Forms.Button();
             this.AddFundsBtn = new System.Windows.Forms.Button();
             this.AddAccount = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.AddAccountpnl = new System.Windows.Forms.Panel();
             this.InitialDeposittxt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -59,15 +56,17 @@
             this.CustomerLastNametxt = new System.Windows.Forms.TextBox();
             this.CustomerFirstNametxt = new System.Windows.Forms.TextBox();
             this.AddFundspnl = new System.Windows.Forms.Panel();
+            this.Cancelbtn1 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.AddFundstxt = new System.Windows.Forms.TextBox();
+            this.AddFundsConfbtn = new System.Windows.Forms.Button();
             this.WithdrawFundspnl = new System.Windows.Forms.Panel();
             this.Cancelbtn2 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.WithdrawFundstxt = new System.Windows.Forms.TextBox();
             this.WithdrawFundsConbtn = new System.Windows.Forms.Button();
-            this.Cancelbtn1 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.AddFundstxt = new System.Windows.Forms.TextBox();
-            this.AddFundsConfbtn = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.Employeepnl.SuspendLayout();
             this.Customerpnl.SuspendLayout();
             this.AddAccountpnl.SuspendLayout();
@@ -75,15 +74,6 @@
             this.AddFundspnl.SuspendLayout();
             this.WithdrawFundspnl.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(14, 15);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(69, 60);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // CustomerOrEmployeecombx
             // 
@@ -93,15 +83,6 @@
             this.CustomerOrEmployeecombx.Size = new System.Drawing.Size(201, 21);
             this.CustomerOrEmployeecombx.TabIndex = 5;
             this.CustomerOrEmployeecombx.SelectedIndexChanged += new System.EventHandler(this.CustomerOrEmployeecombx_SelectedIndexChanged);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(164, 15);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(69, 60);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
             // 
             // AddCustomerbtn
             // 
@@ -151,40 +132,33 @@
             // 
             // Employeepnl
             // 
-            this.Employeepnl.Controls.Add(this.button9);
-            this.Employeepnl.Controls.Add(this.listBox1);
-            this.Employeepnl.Controls.Add(this.comboBox4);
-            this.Employeepnl.Controls.Add(this.button5);
-            this.Employeepnl.Controls.Add(this.button6);
+            this.Employeepnl.Controls.Add(this.label11);
+            this.Employeepnl.Controls.Add(this.label10);
+            this.Employeepnl.Controls.Add(this.Customerlstbx);
+            this.Employeepnl.Controls.Add(this.Employeecombx);
+            this.Employeepnl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Employeepnl.Location = new System.Drawing.Point(496, 99);
             this.Employeepnl.Name = "Employeepnl";
             this.Employeepnl.Size = new System.Drawing.Size(253, 487);
             this.Employeepnl.TabIndex = 13;
             // 
-            // button9
+            // Customerlstbx
             // 
-            this.button9.Location = new System.Drawing.Point(89, 15);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(69, 60);
-            this.button9.TabIndex = 15;
-            this.button9.Text = "button9";
-            this.button9.UseVisualStyleBackColor = true;
+            this.Customerlstbx.FormattingEnabled = true;
+            this.Customerlstbx.ItemHeight = 24;
+            this.Customerlstbx.Location = new System.Drawing.Point(26, 170);
+            this.Customerlstbx.Name = "Customerlstbx";
+            this.Customerlstbx.Size = new System.Drawing.Size(201, 268);
+            this.Customerlstbx.TabIndex = 14;
             // 
-            // listBox1
+            // Employeecombx
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(26, 170);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(201, 277);
-            this.listBox1.TabIndex = 14;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(26, 94);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(201, 21);
-            this.comboBox4.TabIndex = 14;
+            this.Employeecombx.FormattingEnabled = true;
+            this.Employeecombx.Location = new System.Drawing.Point(26, 94);
+            this.Employeecombx.Name = "Employeecombx";
+            this.Employeecombx.Size = new System.Drawing.Size(201, 32);
+            this.Employeecombx.TabIndex = 14;
+            this.Employeecombx.SelectedIndexChanged += new System.EventHandler(this.Employeecombx_SelectedIndexChanged);
             // 
             // Customerpnl
             // 
@@ -201,16 +175,6 @@
             this.Customerpnl.Name = "Customerpnl";
             this.Customerpnl.Size = new System.Drawing.Size(344, 267);
             this.Customerpnl.TabIndex = 14;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(299, 34);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 24);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "label7";
             // 
             // ViewFudnsBtn
             // 
@@ -251,6 +215,16 @@
             this.AddAccount.Text = "Add Account";
             this.AddAccount.UseVisualStyleBackColor = true;
             this.AddAccount.Click += new System.EventHandler(this.AddAccount_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(299, 34);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 24);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "label7";
             // 
             // AddAccountpnl
             // 
@@ -375,6 +349,43 @@
             this.AddFundspnl.Size = new System.Drawing.Size(341, 189);
             this.AddFundspnl.TabIndex = 17;
             // 
+            // Cancelbtn1
+            // 
+            this.Cancelbtn1.Location = new System.Drawing.Point(170, 116);
+            this.Cancelbtn1.Name = "Cancelbtn1";
+            this.Cancelbtn1.Size = new System.Drawing.Size(66, 60);
+            this.Cancelbtn1.TabIndex = 24;
+            this.Cancelbtn1.Text = "Cancel";
+            this.Cancelbtn1.UseVisualStyleBackColor = true;
+            this.Cancelbtn1.Click += new System.EventHandler(this.Cancelbtn1_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(11, 82);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 18);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Add Funds";
+            // 
+            // AddFundstxt
+            // 
+            this.AddFundstxt.Location = new System.Drawing.Point(98, 82);
+            this.AddFundstxt.Name = "AddFundstxt";
+            this.AddFundstxt.Size = new System.Drawing.Size(129, 20);
+            this.AddFundstxt.TabIndex = 22;
+            // 
+            // AddFundsConfbtn
+            // 
+            this.AddFundsConfbtn.Location = new System.Drawing.Point(46, 116);
+            this.AddFundsConfbtn.Name = "AddFundsConfbtn";
+            this.AddFundsConfbtn.Size = new System.Drawing.Size(66, 60);
+            this.AddFundsConfbtn.TabIndex = 21;
+            this.AddFundsConfbtn.Text = "Add Funds";
+            this.AddFundsConfbtn.UseVisualStyleBackColor = true;
+            this.AddFundsConfbtn.Click += new System.EventHandler(this.AddFundsConfbtn_Click);
+            // 
             // WithdrawFundspnl
             // 
             this.WithdrawFundspnl.Controls.Add(this.Cancelbtn2);
@@ -423,42 +434,24 @@
             this.WithdrawFundsConbtn.UseVisualStyleBackColor = true;
             this.WithdrawFundsConbtn.Click += new System.EventHandler(this.WithdrawFundsConbtn_Click);
             // 
-            // Cancelbtn1
+            // label10
             // 
-            this.Cancelbtn1.Location = new System.Drawing.Point(170, 116);
-            this.Cancelbtn1.Name = "Cancelbtn1";
-            this.Cancelbtn1.Size = new System.Drawing.Size(66, 60);
-            this.Cancelbtn1.TabIndex = 24;
-            this.Cancelbtn1.Text = "Cancel";
-            this.Cancelbtn1.UseVisualStyleBackColor = true;
-            this.Cancelbtn1.Click += new System.EventHandler(this.Cancelbtn1_Click);
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(22, 24);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(96, 24);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Employee";
             // 
-            // label8
+            // label11
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(11, 82);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 18);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Add Funds";
-            // 
-            // AddFundstxt
-            // 
-            this.AddFundstxt.Location = new System.Drawing.Point(98, 82);
-            this.AddFundstxt.Name = "AddFundstxt";
-            this.AddFundstxt.Size = new System.Drawing.Size(129, 20);
-            this.AddFundstxt.TabIndex = 22;
-            // 
-            // AddFundsConfbtn
-            // 
-            this.AddFundsConfbtn.Location = new System.Drawing.Point(46, 116);
-            this.AddFundsConfbtn.Name = "AddFundsConfbtn";
-            this.AddFundsConfbtn.Size = new System.Drawing.Size(66, 60);
-            this.AddFundsConfbtn.TabIndex = 21;
-            this.AddFundsConfbtn.Text = "Add Funds";
-            this.AddFundsConfbtn.UseVisualStyleBackColor = true;
-            this.AddFundsConfbtn.Click += new System.EventHandler(this.AddFundsConfbtn_Click);
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(23, 75);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(124, 16);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Choose a customer";
             // 
             // Form1
             // 
@@ -476,6 +469,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Employeepnl.ResumeLayout(false);
+            this.Employeepnl.PerformLayout();
             this.Customerpnl.ResumeLayout(false);
             this.Customerpnl.PerformLayout();
             this.AddAccountpnl.ResumeLayout(false);
@@ -492,18 +486,15 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ComboBox CustomerOrEmployeecombx;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button AddCustomerbtn;
         private System.Windows.Forms.ComboBox Customercombx;
         private System.Windows.Forms.ComboBox Accountcombx;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel Employeepnl;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ListBox Customerlstbx;
+        private System.Windows.Forms.ComboBox Employeecombx;
         private System.Windows.Forms.Panel Customerpnl;
         private System.Windows.Forms.Panel AddAccountpnl;
         private System.Windows.Forms.Panel AddCustomerpnl;
@@ -532,6 +523,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox WithdrawFundstxt;
         private System.Windows.Forms.Button WithdrawFundsConbtn;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
     }
 }
 

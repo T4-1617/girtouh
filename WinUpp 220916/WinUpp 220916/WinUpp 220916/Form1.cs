@@ -14,7 +14,7 @@ namespace WinUpp_220916
     {
         System.Collections.ArrayList Categories;
         System.Collections.ArrayList Customers;
-        System.Collections.ArrayList CustomerAccount;
+        System.Collections.ArrayList CustomerAccounts;
         System.Collections.ArrayList Employees;
 
 
@@ -22,8 +22,7 @@ namespace WinUpp_220916
         {
             InitializeComponent();
 
-
-            CustomerAccount = new System.Collections.ArrayList();
+            CustomerAccounts = new System.Collections.ArrayList();
 
             Categories = new System.Collections.ArrayList();
             Customers = new System.Collections.ArrayList();
@@ -95,9 +94,15 @@ namespace WinUpp_220916
 
         }
 
+        private void Employeecombx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
         private void Customercombx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Accountcombx.Items.Count<0)
+            if (Accountcombx.Items.Count < 0)
             {
 
             }
@@ -105,7 +110,7 @@ namespace WinUpp_220916
             else
             {
                 Accountcombx.Items.Clear();
-                foreach (AccountforCustomer item in CustomerAccount)
+                foreach (AccountforCustomer item in ((Customer)Customercombx.SelectedItem).CustomerAccounts)
                 {
                     Accountcombx.Items.Add(item);
                 }
@@ -118,6 +123,16 @@ namespace WinUpp_220916
 
         }
 
+        private void Accountcombx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            {
+                AddFundsBtn.Visible = true;
+                WithdrawFundsBtn.Visible = true;
+                ViewFudnsBtn.Visible = true;
+            }
+
+        }
+
         private void AddAccount_Click(object sender, EventArgs e)
         {
             AddAccountpnl.Visible = true;
@@ -125,13 +140,14 @@ namespace WinUpp_220916
 
 
         }
+
         private void AddAccountConfbtn_Click(object sender, EventArgs e)
         {
 
 
             AccountforCustomer u = new AccountforCustomer(decimal.Parse(InitialDeposittxt.Text));
 
-            if (InitialDeposittxt.Text != null && Accountnametxt!=null)
+            if (InitialDeposittxt.Text != null && Accountnametxt != null)
 
             {
                 if (decimal.Parse(InitialDeposittxt.Text) < 1000)
@@ -144,13 +160,16 @@ namespace WinUpp_220916
                 else
                 {
                     u.AccountName = Accountnametxt.Text;
-                    CustomerAccount.Add(u);
+                    ((Customer)Customercombx.SelectedItem).CustomerAccounts.Add(u);
 
-                    Accountcombx.Items.Add(u);
                     label7.Visible = false;
                     UpdatePanels(true, false, false, false, false, false);
 
-                    ClearBoxes();
+                    foreach (AccountforCustomer item in ((Customer)Customercombx.SelectedItem).CustomerAccounts)
+                    {
+                        Accountcombx.Items.Add(item);
+                    }
+                        ClearBoxes();
                 }
             }
             else
@@ -164,7 +183,7 @@ namespace WinUpp_220916
         {
             AccountforCustomer d = (AccountforCustomer)Accountcombx.SelectedItem;
             d.Deposit(decimal.Parse(AddFundstxt.Text));
-            label7.Text = ((AccountforCustomer)CustomerAccount[0]).Balance.ToString();
+            label7.Text = ((AccountforCustomer)Accountcombx.SelectedItem).Balance.ToString();
             UpdatePanels(true, false, false, false, false, false);
             ClearBoxes();
 
@@ -174,57 +193,36 @@ namespace WinUpp_220916
         {
             AccountforCustomer f = (AccountforCustomer)Accountcombx.SelectedItem;
             f.Withdraw(decimal.Parse(WithdrawFundstxt.Text));
-            label7.Text = ((AccountforCustomer)CustomerAccount[0]).Balance.ToString();
+            label7.Text = ((AccountforCustomer)Accountcombx.SelectedItem).Balance.ToString();
             UpdatePanels(true, false, false, false, false, false);
             ClearBoxes();
 
         }
 
-        public void UpdatePanels(bool ShowCustomerPanel, bool ShowEmployeePanel, bool ShowAddAccountPanel, bool ShowAddCustomerPanel, bool ShowAddFundspnl, bool ShowWithdrawFundspnl)
-        {
-            Customerpnl.Visible = ShowCustomerPanel;
-            Employeepnl.Visible = ShowEmployeePanel;
-            AddAccountpnl.Visible = ShowAddAccountPanel;
-            AddCustomerpnl.Visible = ShowAddCustomerPanel;
-            AddFundspnl.Visible = ShowAddFundspnl;
-            WithdrawFundspnl.Visible = ShowWithdrawFundspnl;
-
-        }
-
-        public void ClearBoxes()
-        {
-            CustomerFirstNametxt.Text = string.Empty;
-            CustomerLastNametxt.Text = string.Empty;
-            Accountnametxt.Text = string.Empty;
-            InitialDeposittxt.Text = string.Empty;
-            AddFundstxt.Text = string.Empty;
-            WithdrawFundstxt.Text = string.Empty;
-        }
-
-        private void Accountcombx_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            AddFundsBtn.Visible = true;
-            WithdrawFundsBtn.Visible = true;
-            ViewFudnsBtn.Visible = true;
-
-        }
 
         private void ViewFudnsBtn_Click(object sender, EventArgs e)
         {
-            label7.Visible = true;
-            label7.Text = ((AccountforCustomer)CustomerAccount[0]).Balance.ToString();
+            if (Accountcombx.SelectedItem != null)
+            {
+                label7.Visible = true;
+                label7.Text = ((AccountforCustomer)Accountcombx.SelectedItem).Balance.ToString();
+            }
         }
 
         private void AddFundsBtn_Click(object sender, EventArgs e)
         {
-            UpdatePanels(true, false, false, false, true, false);
-
+            if (Accountcombx.SelectedItem != null)
+            {
+                UpdatePanels(true, false, false, false, true, false);
+            }
         }
 
         private void WithdrawFundsBtn_Click(object sender, EventArgs e)
         {
-            UpdatePanels(true, false, false, false, false, true);
+            if (Accountcombx.SelectedItem != null)
+            {
+                UpdatePanels(true, false, false, false, false, true);
+            }
         }
 
         private void Cancelbtn1_Click(object sender, EventArgs e)
@@ -240,6 +238,27 @@ namespace WinUpp_220916
             ClearBoxes();
         }
 
+
+        public void ClearBoxes()
+        {
+            CustomerFirstNametxt.Text = string.Empty;
+            CustomerLastNametxt.Text = string.Empty;
+            Accountnametxt.Text = string.Empty;
+            InitialDeposittxt.Text = string.Empty;
+            AddFundstxt.Text = string.Empty;
+            WithdrawFundstxt.Text = string.Empty;
+        }
+
+        public void UpdatePanels(bool ShowCustomerPanel, bool ShowEmployeePanel, bool ShowAddAccountPanel, bool ShowAddCustomerPanel, bool ShowAddFundspnl, bool ShowWithdrawFundspnl)
+        {
+            Customerpnl.Visible = ShowCustomerPanel;
+            Employeepnl.Visible = ShowEmployeePanel;
+            AddAccountpnl.Visible = ShowAddAccountPanel;
+            AddCustomerpnl.Visible = ShowAddCustomerPanel;
+            AddFundspnl.Visible = ShowAddFundspnl;
+            WithdrawFundspnl.Visible = ShowWithdrawFundspnl;
+
+        }
 
     }
 }
