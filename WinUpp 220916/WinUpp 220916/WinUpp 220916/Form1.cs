@@ -15,7 +15,6 @@ namespace WinUpp_220916
         System.Collections.ArrayList Categories;
         System.Collections.ArrayList Customers;
         System.Collections.ArrayList CustomerAccounts;
-        System.Collections.ArrayList Employees;
 
 
         public Form1()
@@ -88,6 +87,8 @@ namespace WinUpp_220916
 
             Customercombx.Items.Add(g);
 
+            Employeecombx.Items.Add(g);
+
             UpdatePanels(true, false, false, false, false, false);
 
             ClearBoxes();
@@ -96,7 +97,15 @@ namespace WinUpp_220916
 
         private void Employeecombx_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Customerlstbx.Items.Clear();
 
+            foreach (AccountforCustomer item in ((Customer)Employeecombx.SelectedItem).CustomerAccounts)
+            {
+                foreach (Transaction t in item.GetTransactions())
+                {
+                    Customerlstbx.Items.Add(t);
+                }
+            }
 
         }
 
@@ -187,15 +196,26 @@ namespace WinUpp_220916
             UpdatePanels(true, false, false, false, false, false);
             ClearBoxes();
 
+            Customerlstbx.Items.Clear();
+
         }
 
         private void WithdrawFundsConbtn_Click(object sender, EventArgs e)
         {
+            if (((AccountforCustomer)Accountcombx.SelectedItem).Balance >=500) 
+                { 
             AccountforCustomer f = (AccountforCustomer)Accountcombx.SelectedItem;
             f.Withdraw(decimal.Parse(WithdrawFundstxt.Text));
             label7.Text = ((AccountforCustomer)Accountcombx.SelectedItem).Balance.ToString();
             UpdatePanels(true, false, false, false, false, false);
             ClearBoxes();
+
+            }
+
+            else
+            {
+                label7.Text = "Can not withdraw chosen amount from account.";
+            }
 
         }
 

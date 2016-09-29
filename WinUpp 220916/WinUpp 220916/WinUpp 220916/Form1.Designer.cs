@@ -35,6 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Employeepnl = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.Customerlstbx = new System.Windows.Forms.ListBox();
             this.Employeecombx = new System.Windows.Forms.ComboBox();
             this.Customerpnl = new System.Windows.Forms.Panel();
@@ -65,8 +67,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.WithdrawFundstxt = new System.Windows.Forms.TextBox();
             this.WithdrawFundsConbtn = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.Employeepnl.SuspendLayout();
             this.Customerpnl.SuspendLayout();
             this.AddAccountpnl.SuspendLayout();
@@ -141,6 +141,25 @@
             this.Employeepnl.Name = "Employeepnl";
             this.Employeepnl.Size = new System.Drawing.Size(253, 487);
             this.Employeepnl.TabIndex = 13;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(23, 75);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(124, 16);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Choose a customer";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(22, 24);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(96, 24);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Employee";
             // 
             // Customerlstbx
             // 
@@ -433,25 +452,6 @@
             this.WithdrawFundsConbtn.Text = "Withdraw Funds";
             this.WithdrawFundsConbtn.UseVisualStyleBackColor = true;
             this.WithdrawFundsConbtn.Click += new System.EventHandler(this.WithdrawFundsConbtn_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(22, 24);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(96, 24);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "Employee";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(23, 75);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(124, 16);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "Choose a customer";
             // 
             // Form1
             // 

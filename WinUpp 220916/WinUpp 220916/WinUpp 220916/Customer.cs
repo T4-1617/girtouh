@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace WinUpp_220916
 {
     class Customer
     {
-        public System.Collections.ArrayList CustomerAccounts;
+        public ArrayList CustomerAccounts;
 
         public Customer()
         {
-            CustomerAccounts = new System.Collections.ArrayList();
+            CustomerAccounts = new ArrayList();
         }
 
 
@@ -26,7 +27,7 @@ namespace WinUpp_220916
         }
 
 
-        public System.Collections.ArrayList GetCusomterAccounts()
+        public ArrayList GetCusomterAccounts()
         {
             return CustomerAccounts;
         }
@@ -34,7 +35,7 @@ namespace WinUpp_220916
 
         public void FundsforAccount(decimal InitialDeposit)
         {
-            if (InitialDeposit >=1000)
+            if (InitialDeposit >= 1000)
             {
                 AccountforCustomer a = new AccountforCustomer(InitialDeposit);
 
@@ -42,7 +43,7 @@ namespace WinUpp_220916
             }
 
         }
-        
+
 
         public override string ToString()
         {
@@ -55,11 +56,21 @@ namespace WinUpp_220916
     {
         private decimal balance;
 
+
         public string AccountName { get; set; }
+
+        private ArrayList transactions;
 
         public AccountforCustomer(decimal starting_fund)
         {
+            transactions = new ArrayList();
+
             balance = starting_fund;
+        }
+
+        public ArrayList GetTransactions()
+        {
+            return transactions;
         }
 
         public decimal Balance
@@ -67,20 +78,43 @@ namespace WinUpp_220916
             get { return balance; }
         }
 
-        public void Withdraw (decimal changedamount)
+        public void Withdraw(decimal changedamount)
         {
+            //Transaction g = new Transaction();
             balance = balance - changedamount;
+
+            transactions.Add(new Transaction() { Amount = changedamount, TransactionType = "Withdrew", AccountTransactionName= AccountName });
         }
 
         public void Deposit(decimal changedamount)
         {
             balance = balance + changedamount;
 
+            //Transaction y = new Transaction();
+            //y.Amount = changedamount;
+            //y.TransactionType = "Deposit";
+
+            transactions.Add(new Transaction() { Amount = changedamount, TransactionType = "Deposit", AccountTransactionName = AccountName });
         }
 
         public override string ToString()
         {
-            return string.Format("{0}",AccountName);
+            return string.Format("{0}", AccountName);
         }
+    }
+
+    public class Transaction
+    {
+        public string AccountTransactionName { get; set; }
+
+        public decimal Amount { get; set; }
+
+        public string TransactionType { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("{0} SEK {1}: {2} ", Amount, TransactionType, AccountTransactionName);
+        }
+
     }
 }
