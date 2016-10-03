@@ -23,5 +23,10 @@ namespace WebUpp_290916.Controllers
         {
             return View();
         }
+
+        public ActionResult Skills()
+        {
+            return View();
+        }
     }
 }
